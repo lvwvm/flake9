@@ -1,10 +1,10 @@
 .. _configuration:
 
 ====================
- Configuring Flake8
+ Configuring Flake9
 ====================
 
-Once you have learned how to :ref:`invoke <invocation>` |Flake8|, you will soon
+Once you have learned how to :ref:`invoke <invocation>` |Flake9|, you will soon
 want to learn how to configure it so you do not have to specify the same
 options every time you use it.
 
@@ -12,23 +12,23 @@ This section will show you how to make
 
 .. prompt:: bash
 
-    flake8
+    flake9
 
 Remember that you want to specify certain options without writing
 
 .. prompt:: bash
 
-    flake8 --select E123,W456 --enable-extensions H111
+    flake9 --select E123,W456 --enable-extensions H111
 
 
 Configuration Locations
 =======================
 
-|Flake8| supports storing its configuration in the following places:
+|Flake9| supports storing its configuration in the following places:
 
 - Your top-level user directory
 
-- In your project in one of ``setup.cfg``, ``tox.ini``, or ``.flake8``.
+- In your project in one of ``setup.cfg``, ``tox.ini``, or ``.flake9``.
 
 Values set at the command line have highest priority, then those in the
 project configuration file, then those in your user directory, and finally
@@ -39,7 +39,7 @@ which can alter this.
 "User" Configuration
 --------------------
 
-|Flake8| allows a user to use "global" configuration file to store preferences.
+|Flake9| allows a user to use "global" configuration file to store preferences.
 The user configuration file is expected to be stored somewhere in the user's
 "home" directory.
 
@@ -49,7 +49,7 @@ The user configuration file is expected to be stored somewhere in the user's
 - On Linux and other Unix like systems (including OS X) we will look in
   ``~/``.
 
-Note that |Flake8| looks for ``~\.flake8`` on Windows and ``~/.config/flake8``
+Note that |Flake9| looks for ``~\.flake9`` on Windows and ``~/.config/flake9``
 on Linux and other Unix systems.
 
 User configuration files use the same syntax as Project Configuration files.
@@ -59,12 +59,12 @@ Keep reading to see that syntax.
 Project Configuration
 ---------------------
 
-|Flake8| is written with the understanding that people organize projects into
-sub-directories. Let's take for example |Flake8|'s own project structure
+|Flake9| is written with the understanding that people organize projects into
+sub-directories. Let's take for example |Flake9|'s own project structure
 
 .. code::
 
-    flake8
+    flake9
     ├── docs
     │   ├── build
     │   └── source
@@ -73,7 +73,7 @@ sub-directories. Let's take for example |Flake8|'s own project structure
     │       ├── dev
     │       ├── internal
     │       └── user
-    ├── flake8
+    ├── flake9
     │   ├── formatting
     │   ├── main
     │   ├── options
@@ -84,17 +84,17 @@ sub-directories. Let's take for example |Flake8|'s own project structure
         ├── integration
         └── unit
 
-In the top-level ``flake8`` directory (which contains ``docs``, ``flake8``,
+In the top-level ``flake9`` directory (which contains ``docs``, ``flake9``,
 and ``tests``) there's also ``tox.ini`` and ``setup.cfg`` files. In our case,
-we keep our |Flake8| configuration in ``tox.ini``. Regardless of whether you
-keep your config in ``.flake8``, ``setup.cfg``, or ``tox.ini`` we expect you
-to use INI to configure |Flake8| (since each of these files already uses INI
-as a format). This means that any |Flake8| configuration you wish to set needs
-to be in the ``flake8`` section, which means it needs to start like so:
+we keep our |Flake9| configuration in ``tox.ini``. Regardless of whether you
+keep your config in ``.flake9``, ``setup.cfg``, or ``tox.ini`` we expect you
+to use INI to configure |Flake9| (since each of these files already uses INI
+as a format). This means that any |Flake9| configuration you wish to set needs
+to be in the ``flake9`` section, which means it needs to start like so:
 
 .. code-block:: ini
 
-    [flake8]
+    [flake9]
 
 Each command-line option that you want to specify in your config file can
 be named in either of two ways:
@@ -105,15 +105,15 @@ be named in either of two ways:
 
 .. note::
 
-    Not every |Flake8| command-line option can be specified in the
+    Not every |Flake9| command-line option can be specified in the
     configuration file. See :ref:`our list of options <options-list>` to
     determine which options will be parsed from the configuration files.
 
-Let's actually look at |Flake8|'s own configuration section:
+Let's actually look at |Flake9|'s own configuration section:
 
 .. code-block:: ini
 
-    [flake8]
+    [flake9]
     ignore = D203
     exclude = .git,__pycache__,docs/source/conf.py,old,build,dist
     max-complexity = 10
@@ -122,7 +122,7 @@ This is equivalent to:
 
 .. prompt:: bash
 
-    flake8 --ignore D203 \
+    flake9 --ignore D203 \
              --exclude .git,__pycache__,docs/source/conf.py,old,build,dist \
              --max-complexity 10
 
@@ -130,7 +130,7 @@ In our case, if we wanted to, we could also do
 
 .. code-block:: ini
 
-    [flake8]
+    [flake9]
     ignore = D203
     exclude =
         .git,
@@ -145,7 +145,7 @@ This would allow us to add comments for why we're excluding items, e.g.,
 
 .. code-block:: ini
 
-    [flake8]
+    [flake9]
     ignore = D203
     exclude =
         # No need to traverse our git directory
@@ -154,11 +154,11 @@ This would allow us to add comments for why we're excluding items, e.g.,
         __pycache__,
         # The conf file is mostly autogenerated, ignore it
         docs/source/conf.py,
-        # The old directory contains Flake8 2.0
+        # The old directory contains Flake9 2.0
         old,
         # This contains our built documentation
         build,
-        # This contains builds of flake8 that we don't want to check
+        # This contains builds of flake9 that we don't want to check
         dist
     max-complexity = 10
 
@@ -168,18 +168,18 @@ This would allow us to add comments for why we're excluding items, e.g.,
     :mod:`configparser` backport from PyPI. That backport enables us to
     support this behaviour on all supported versions of Python.
 
-    Please do **not** open issues about this dependency to |Flake8|.
+    Please do **not** open issues about this dependency to |Flake9|.
 
 .. note::
 
     You can also specify ``--max-complexity`` as ``max_complexity = 10``.
 
 This is also useful if you have a long list of error codes to ignore. Let's
-look at a portion of a project's Flake8 configuration in their ``tox.ini``:
+look at a portion of a project's Flake9 configuration in their ``tox.ini``:
 
 .. code-block:: ini
 
-    [flake8]
+    [flake9]
     # it's not a bug that we aren't using all of hacking, ignore:
     # F812: list comprehension redefines ...
     # H101: Use TODO(NAME)
@@ -198,7 +198,7 @@ They use the comments to describe the check but they could also write this as:
 
 .. code-block:: ini
 
-    [flake8]
+    [flake9]
     # it's not a bug that we aren't using all of hacking
     ignore =
         # F812: list comprehension redefines ...
@@ -225,7 +225,7 @@ They use the comments to describe the check but they could also write this as:
         H501
 
 Or they could use each comment to describe **why** they've ignored the check.
-|Flake8| knows how to parse these lists and will appropriately handle
+|Flake9| knows how to parse these lists and will appropriately handle
 these situations.
 
 
@@ -234,12 +234,12 @@ Using Local Plugins
 
 .. versionadded:: 3.5.0
 
-|Flake8| allows users to write plugins that live locally in a project. These
+|Flake9| allows users to write plugins that live locally in a project. These
 plugins do not need to use setuptools or any of the other overhead associated
 with plugins distributed on PyPI. To use these plugins, users must specify
-them in their configuration file (i.e., ``.flake8``, ``setup.cfg``, or
+them in their configuration file (i.e., ``.flake9``, ``setup.cfg``, or
 ``tox.ini``). This must be configured in a separate INI section named
-``flake8:local-plugins``.
+``flake9:local-plugins``.
 
 Users may configure plugins that check source code, i.e., ``extension``
 plugins, and plugins that report errors, i.e., ``report`` plugins.
@@ -248,50 +248,50 @@ An example configuration might look like:
 
 .. code-block:: ini
 
-    [flake8:local-plugins]
+    [flake9:local-plugins]
     extension =
-        MC1 = project.flake8.checkers:MyChecker1
-        MC2 = project.flake8.checkers:MyChecker2
+        MC1 = project.flake9.checkers:MyChecker1
+        MC2 = project.flake9.checkers:MyChecker2
     report =
-        MR1 = project.flake8.reporters:MyReporter1
-        MR2 = project.flake8.reporters:MyReporter2
+        MR1 = project.flake9.reporters:MyReporter1
+        MR2 = project.flake9.reporters:MyReporter2
 
-|Flake8| will also, however, allow for commas to separate the plugins for
+|Flake9| will also, however, allow for commas to separate the plugins for
 example:
 
 .. code-block:: ini
 
-    [flake8:local-plugins]
+    [flake9:local-plugins]
     extension =
-        MC1 = project.flake8.checkers:MyChecker1,
-        MC2 = project.flake8.checkers:MyChecker2
+        MC1 = project.flake9.checkers:MyChecker1,
+        MC2 = project.flake9.checkers:MyChecker2
     report =
-        MR1 = project.flake8.reporters:MyReporter1,
-        MR2 = project.flake8.reporters:MyReporter2
+        MR1 = project.flake9.reporters:MyReporter1,
+        MR2 = project.flake9.reporters:MyReporter2
 
 These configurations will allow you to select your own custom reporter plugin
 that you've designed or will utilize your new check classes.
 
-If your package is installed in the same virtualenv that |Flake8| will run
-from, and your local plugins are part of that package, you're all set; |Flake8|
+If your package is installed in the same virtualenv that |Flake9| will run
+from, and your local plugins are part of that package, you're all set; |Flake9|
 will be able to import your local plugins. However, if you are working on a
-project that isn't set up as an installable package, or |Flake8| doesn't run
-from the same virtualenv your code runs in, you may need to tell |Flake8| where
+project that isn't set up as an installable package, or |Flake9| doesn't run
+from the same virtualenv your code runs in, you may need to tell |Flake9| where
 to import your local plugins from. You can do this via the ``paths`` option in
 the ``local-plugins`` section of your config:
 
 .. code-block:: ini
 
-    [flake8:local-plugins]
+    [flake9:local-plugins]
     extension =
-      MC1 = myflake8plugin:MyChecker1
+      MC1 = myflake9plugin:MyChecker1
     paths =
       ./path/to
 
 Relative paths will be interpreted relative to the config file. Multiple paths
 can be listed (comma separated just like ``exclude``) as needed. If your local
 plugins have any dependencies, it's up to you to ensure they are installed in
-whatever Python environment |Flake8| runs in.
+whatever Python environment |Flake9| runs in.
 
 .. note::
 

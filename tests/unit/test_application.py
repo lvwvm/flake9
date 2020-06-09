@@ -5,7 +5,7 @@ import sys
 import mock
 import pytest
 
-from flake8.main import application as app
+from flake9.main import application as app
 
 
 def options(**kwargs):

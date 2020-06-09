@@ -1,13 +1,13 @@
-"""Tests for the flake8.style_guide.StyleGuide class."""
+"""Tests for the flake9.style_guide.StyleGuide class."""
 import argparse
 
 import mock
 import pytest
 
-from flake8 import statistics
-from flake8 import style_guide
-from flake8 import utils
-from flake8.formatting import base
+from flake9 import statistics
+from flake9 import style_guide
+from flake9 import utils
+from flake9.formatting import base
 
 
 def create_options(**kwargs):

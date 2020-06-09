@@ -1,12 +1,12 @@
-"""Tests for flake8.plugins.manager.Plugin."""
+"""Tests for flake9.plugins.manager.Plugin."""
 import argparse
 
 import mock
 import pytest
 
-from flake8 import exceptions
-from flake8.options import manager as options_manager
-from flake8.plugins import manager
+from flake9 import exceptions
+from flake9.options import manager as options_manager
+from flake9.plugins import manager
 
 
 def test_load_plugin_fallsback_on_old_setuptools():

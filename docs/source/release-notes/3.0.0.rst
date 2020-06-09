@@ -1,7 +1,7 @@
 3.0.0 -- 2016-07-25
 -------------------
 
-- Rewrite our documentation from scratch! (http://flake8.pycqa.org)
+- Rewrite our documentation from scratch! (http://flake9.pycqa.org)
 
 - Drop explicit support for Pythons 2.6, 3.2, and 3.3.
 
@@ -27,7 +27,7 @@
   to the ``add_option`` that plugins use to register new options.
 
 - Update ``--install-hook`` to require the name of version control system hook
-  you wish to install a Flake8.
+  you wish to install a Flake9.
 
 - Stop checking sub-directories more than once via the setuptools command
 
@@ -35,8 +35,8 @@
   ``--stdin-display-name`` so the output is properly formatted
 
 - The Git hook now uses ``sys.executable`` to format the shebang line.
-  This allows Flake8 to install a hook script from a virtualenv that points to
-  that virtualenv's Flake8 as opposed to a global one (without the virtualenv
+  This allows Flake9 to install a hook script from a virtualenv that points to
+  that virtualenv's Flake9 as opposed to a global one (without the virtualenv
   being sourced).
 
 - Print results in a deterministic and consistent ordering when used with
@@ -49,9 +49,9 @@
   expect.
 
 - Stop forcibly re-adding ``.tox``, ``.eggs``, and ``*.eggs`` to
-  ``--exclude``. Flake8 2.x started always appending those three patterns
+  ``--exclude``. Flake9 2.x started always appending those three patterns
   to any exclude list (including the default and any user supplied list).
-  Flake8 3 has stopped adding these in, so you may see errors when upgrading
+  Flake9 3 has stopped adding these in, so you may see errors when upgrading
   due to these patterns no longer being forcibly excluded by default if you
   have your own exclude patterns specified.
 

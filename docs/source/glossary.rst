@@ -1,19 +1,19 @@
 .. _glossary:
 
 ================================================
- Glossary of Terms Used in Flake8 Documentation
+ Glossary of Terms Used in Flake9 Documentation
 ================================================
 
 .. glossary::
     :sorted:
 
     formatter
-        A :term:`plugin` that augments the output of |Flake8| when passed
-        to :option:`flake8 --format`.
+        A :term:`plugin` that augments the output of |Flake9| when passed
+        to :option:`flake9 --format`.
 
     plugin
         A package that is typically installed from PyPI to augment the
-        behaviour of |Flake8| either through adding one or more additional
+        behaviour of |Flake9| either through adding one or more additional
         :term:`check`\ s or providing additional :term:`formatter`\ s.
 
     check
@@ -42,16 +42,16 @@
         errors.
 
     pyflakes
-        The project |Flake8| depends on to lint files (check for unused
+        The project |Flake9| depends on to lint files (check for unused
         imports, variables, etc.). This uses the ``F`` :term:`class` of
-        :term:`error code`\ s reported by |Flake8|.
+        :term:`error code`\ s reported by |Flake9|.
 
     pycodestyle
-        The project |Flake8| depends on to provide style enforcement.
+        The project |Flake9| depends on to provide style enforcement.
         pycodestyle implements :term:`check`\ s for :pep:`8`. This uses the
         ``E`` and ``W`` :term:`class`\ es of :term:`error code`\ s.
 
     mccabe
-        The project |Flake8| depends on to calculate the McCabe complexity
+        The project |Flake9| depends on to calculate the McCabe complexity
         of a unit of code (e.g., a function). This uses the ``C``
         :term:`class` of :term:`error code`\ s.

@@ -1,8 +1,8 @@
 ==================
- Releasing Flake8
+ Releasing Flake9
 ==================
 
-There is not much that is hard to find about how |Flake8| is released.
+There is not much that is hard to find about how |Flake9| is released.
 
 - We use **major** releases (e.g., 2.0.0, 3.0.0, etc.) for big, potentially
   backwards incompatible, releases.
@@ -21,10 +21,10 @@ fine.
 Major Releases
 ==============
 
-Major releases are often associated with backwards incompatibility. |Flake8|
+Major releases are often associated with backwards incompatibility. |Flake9|
 hopes to avoid those, but will occasionally need them.
 
-Historically, |Flake8| has generated major releases for:
+Historically, |Flake9| has generated major releases for:
 
 - Unvendoring dependencies (2.0)
 
@@ -64,10 +64,10 @@ Patch Releases
 Patch releases should only ever have bug fixes in them.
 
 We do not update dependency constraints in patch releases. If you do not
-install |Flake8| from PyPI, there is a chance that your packager is using
+install |Flake9| from PyPI, there is a chance that your packager is using
 different requirements. Some downstream redistributors have been known to
 force a new version of PyFlakes, pep8/PyCodestyle, or McCabe into place.
-Occasionally this will cause breakage when using |Flake8|. There is little
+Occasionally this will cause breakage when using |Flake9|. There is little
 we can do to help you in those cases.
 
 
@@ -95,5 +95,5 @@ We tag the most recent commit that passes those items and contains our release
 notes.
 
 Finally, we run ``tox -e release`` to build source distributions (e.g.,
-``flake8-3.0.0.tar.gz``), universal wheels, and upload them to PyPI with
+``flake9-3.0.0.tar.gz``), universal wheels, and upload them to PyPI with
 Twine.

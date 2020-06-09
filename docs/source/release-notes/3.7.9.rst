@@ -12,12 +12,12 @@ Bugs Fixed
 
 .. all links
 .. _3.7.9 milestone:
-    https://gitlab.com/pycqa/flake8/milestones/33
+    https://gitlab.com/pycqa/flake9/milestones/33
 
 .. issue links
 .. _GitLab#587:
-    https://gitlab.com/pycqa/flake8/issues/587
+    https://gitlab.com/pycqa/flake9/issues/587
 
 .. merge request links
 .. _GitLab!367:
-    https://gitlab.com/pycqa/flake8/merge_requests/367
+    https://gitlab.com/pycqa/flake9/merge_requests/367

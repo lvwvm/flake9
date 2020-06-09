@@ -4,15 +4,15 @@
  Receiving Information For A Check Plugin
 ==========================================
 
-Plugins to |Flake8| have a great deal of information that they can request
-from a :class:`~flake8.processor.FileProcessor` instance. Historically,
-|Flake8| has supported two types of plugins:
+Plugins to |Flake9| have a great deal of information that they can request
+from a :class:`~flake9.processor.FileProcessor` instance. Historically,
+|Flake9| has supported two types of plugins:
 
 #. classes that accept parsed abstract syntax trees (ASTs)
 
 #. functions that accept a range of arguments
 
-|Flake8| now does not distinguish between the two types of plugins. Any plugin
+|Flake9| now does not distinguish between the two types of plugins. Any plugin
 can accept either an AST or a range of arguments. Further, any plugin that has
 certain callable attributes can also register options and receive parsed
 options.
@@ -21,36 +21,36 @@ options.
 Indicating Desired Data
 =======================
 
-|Flake8| inspects the plugin's signature to determine what parameters it
-expects using :func:`flake8.utils.parameters_for`.
-:attr:`flake8.plugins.manager.Plugin.parameters` caches the values so that
+|Flake9| inspects the plugin's signature to determine what parameters it
+expects using :func:`flake9.utils.parameters_for`.
+:attr:`flake9.plugins.manager.Plugin.parameters` caches the values so that
 each plugin makes that fairly expensive call once per plugin. When processing
 a file, a plugin can ask for any of the following:
 
-- :attr:`~flake8.processor.FileProcessor.blank_before`
-- :attr:`~flake8.processor.FileProcessor.blank_lines`
-- :attr:`~flake8.processor.FileProcessor.checker_state`
-- :attr:`~flake8.processor.FileProcessor.indent_char`
-- :attr:`~flake8.processor.FileProcessor.indent_level`
-- :attr:`~flake8.processor.FileProcessor.line_number`
-- :attr:`~flake8.processor.FileProcessor.logical_line`
-- :attr:`~flake8.processor.FileProcessor.multiline`
-- :attr:`~flake8.processor.FileProcessor.noqa`
-- :attr:`~flake8.processor.FileProcessor.previous_indent_level`
-- :attr:`~flake8.processor.FileProcessor.previous_logical`
-- :attr:`~flake8.processor.FileProcessor.previous_unindented_logical_line`
-- :attr:`~flake8.processor.FileProcessor.tokens`
+- :attr:`~flake9.processor.FileProcessor.blank_before`
+- :attr:`~flake9.processor.FileProcessor.blank_lines`
+- :attr:`~flake9.processor.FileProcessor.checker_state`
+- :attr:`~flake9.processor.FileProcessor.indent_char`
+- :attr:`~flake9.processor.FileProcessor.indent_level`
+- :attr:`~flake9.processor.FileProcessor.line_number`
+- :attr:`~flake9.processor.FileProcessor.logical_line`
+- :attr:`~flake9.processor.FileProcessor.multiline`
+- :attr:`~flake9.processor.FileProcessor.noqa`
+- :attr:`~flake9.processor.FileProcessor.previous_indent_level`
+- :attr:`~flake9.processor.FileProcessor.previous_logical`
+- :attr:`~flake9.processor.FileProcessor.previous_unindented_logical_line`
+- :attr:`~flake9.processor.FileProcessor.tokens`
 
 Some properties are set once per file for plugins which iterate itself over
 the data instead of being called on each physical or logical line.
 
-- :attr:`~flake8.processor.FileProcessor.filename`
-- :attr:`~flake8.processor.FileProcessor.file_tokens`
-- :attr:`~flake8.processor.FileProcessor.lines`
-- :attr:`~flake8.processor.FileProcessor.max_line_length`
-- :attr:`~flake8.processor.FileProcessor.max_doc_length`
-- :attr:`~flake8.processor.FileProcessor.total_lines`
-- :attr:`~flake8.processor.FileProcessor.verbose`
+- :attr:`~flake9.processor.FileProcessor.filename`
+- :attr:`~flake9.processor.FileProcessor.file_tokens`
+- :attr:`~flake9.processor.FileProcessor.lines`
+- :attr:`~flake9.processor.FileProcessor.max_line_length`
+- :attr:`~flake9.processor.FileProcessor.max_doc_length`
+- :attr:`~flake9.processor.FileProcessor.total_lines`
+- :attr:`~flake9.processor.FileProcessor.verbose`
 
 These parameters can also be supplied to plugins working on each line
 separately.
@@ -71,16 +71,16 @@ Any plugin that has callable attributes ``add_options`` and
 
 Your ``add_options`` function should expect to receive an instance of
 |OptionManager|. An |OptionManager| instance behaves very similarly to
-:class:`optparse.OptionParser`. It, however, uses the layer that |Flake8| has
+:class:`optparse.OptionParser`. It, however, uses the layer that |Flake9| has
 developed on top of :mod:`argparse` to also handle configuration file parsing.
-:meth:`~flake8.options.manager.OptionManager.add_option` creates an |Option|
+:meth:`~flake9.options.manager.OptionManager.add_option` creates an |Option|
 which accepts the same parameters as :mod:`optparse` as well as three extra
 boolean parameters:
 
 - ``parse_from_config``
 
   The command-line option should also be parsed from config files discovered
-  by |Flake8|.
+  by |Flake9|.
 
   .. note::
 
@@ -106,7 +106,7 @@ boolean parameters:
   allow a comma-separated list of paths.
 
 Each of these options works individually or can be combined. Let's look at a
-couple examples from |Flake8|. In each example, we will have
+couple examples from |Flake9|. In each example, we will have
 ``option_manager`` which is an instance of |OptionManager|.
 
 .. code-block:: python
@@ -151,14 +151,14 @@ Finally, we show an option that uses all three extra flags. Values from
 list, and then each item will be normalized.
 
 For information about other parameters to
-:meth:`~flake8.options.manager.OptionManager.add_option` refer to the
+:meth:`~flake9.options.manager.OptionManager.add_option` refer to the
 documentation of :mod:`argparse`.
 
 
 Accessing Parsed Options
 ========================
 
-When a plugin has a callable ``parse_options`` attribute, |Flake8| will call
+When a plugin has a callable ``parse_options`` attribute, |Flake9| will call
 it and attempt to provide the |OptionManager| instance, the parsed options
 which will be an instance of :class:`argparse.Namespace`, and the extra
 arguments that were not parsed by the |OptionManager|. If that fails, we will
@@ -174,5 +174,5 @@ just pass the :class:`argparse.Namespace`. In other words, your
         pass
 
 .. substitutions
-.. |OptionManager| replace:: :class:`~flake8.options.manager.OptionManager`
-.. |Option| replace:: :class:`~flake8.options.manager.Option`
+.. |OptionManager| replace:: :class:`~flake9.options.manager.OptionManager`
+.. |Option| replace:: :class:`~flake9.options.manager.Option`

@@ -1,8 +1,8 @@
 """Tests for the Nothing formatter obbject."""
 import argparse
 
-from flake8 import style_guide
-from flake8.formatting import default
+from flake9 import style_guide
+from flake9.formatting import default
 
 
 def options(**kwargs):

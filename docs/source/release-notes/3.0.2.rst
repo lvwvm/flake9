@@ -12,6 +12,6 @@
 
 .. links
 .. _GitLab#181:
-    https://gitlab.com/pycqa/flake8/issues/181
+    https://gitlab.com/pycqa/flake9/issues/181
 .. _GitLab#186:
-    https://gitlab.com/pycqa/flake8/issues/186
+    https://gitlab.com/pycqa/flake9/issues/186

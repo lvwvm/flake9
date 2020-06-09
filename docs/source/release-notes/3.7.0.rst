@@ -35,51 +35,51 @@ Features
 - Allow ``# noqa:X123`` comments without space between the colon and codes
   list (See also `GitLab!273`_, `GitLab#470`_)
 
-- Remove broken and unused ``flake8.listen`` plugin type (See also
+- Remove broken and unused ``flake9.listen`` plugin type (See also
   `GitLab!274`_, `GitLab#480`_)
 
 .. all links
 .. _3.7.0 milestone:
-    https://gitlab.com/pycqa/flake8/milestones/23
+    https://gitlab.com/pycqa/flake9/milestones/23
 .. _pre-commit:
     https://pre-commit.com/
 
 .. issue links
 .. _GitLab#156:
-    https://gitlab.com/pycqa/flake8/issues/156
+    https://gitlab.com/pycqa/flake9/issues/156
 .. _GitLab#452:
-    https://gitlab.com/pycqa/flake8/issues/452
+    https://gitlab.com/pycqa/flake9/issues/452
 .. _GitLab#470:
-    https://gitlab.com/pycqa/flake8/issues/470
+    https://gitlab.com/pycqa/flake9/issues/470
 .. _GitLab#471:
-    https://gitlab.com/pycqa/flake8/issues/471
+    https://gitlab.com/pycqa/flake9/issues/471
 .. _GitLab#480:
-    https://gitlab.com/pycqa/flake8/issues/480
+    https://gitlab.com/pycqa/flake9/issues/480
 
 .. merge request links
 .. _GitLab!259:
-    https://gitlab.com/pycqa/flake8/merge_requests/259
+    https://gitlab.com/pycqa/flake9/merge_requests/259
 .. _GitLab!261:
-    https://gitlab.com/pycqa/flake8/merge_requests/261
+    https://gitlab.com/pycqa/flake9/merge_requests/261
 .. _GitLab!264:
-    https://gitlab.com/pycqa/flake8/merge_requests/264
+    https://gitlab.com/pycqa/flake9/merge_requests/264
 .. _GitLab!268:
-    https://gitlab.com/pycqa/flake8/merge_requests/268
+    https://gitlab.com/pycqa/flake9/merge_requests/268
 .. _GitLab!269:
-    https://gitlab.com/pycqa/flake8/merge_requests/269
+    https://gitlab.com/pycqa/flake9/merge_requests/269
 .. _GitLab!273:
-    https://gitlab.com/pycqa/flake8/merge_requests/273
+    https://gitlab.com/pycqa/flake9/merge_requests/273
 .. _GitLab!274:
-    https://gitlab.com/pycqa/flake8/merge_requests/274
+    https://gitlab.com/pycqa/flake9/merge_requests/274
 .. _GitLab!281:
-    https://gitlab.com/pycqa/flake8/merge_requests/281
+    https://gitlab.com/pycqa/flake9/merge_requests/281
 .. _GitLab!283:
-    https://gitlab.com/pycqa/flake8/merge_requests/283
+    https://gitlab.com/pycqa/flake9/merge_requests/283
 .. _GitLab!284:
-    https://gitlab.com/pycqa/flake8/merge_requests/284
+    https://gitlab.com/pycqa/flake9/merge_requests/284
 .. _GitLab!285:
-    https://gitlab.com/pycqa/flake8/merge_requests/285
+    https://gitlab.com/pycqa/flake9/merge_requests/285
 .. _GitLab!287:
-    https://gitlab.com/pycqa/flake8/merge_requests/287
+    https://gitlab.com/pycqa/flake9/merge_requests/287
 .. _GitLab!288:
-    https://gitlab.com/pycqa/flake8/merge_requests/288
+    https://gitlab.com/pycqa/flake9/merge_requests/288

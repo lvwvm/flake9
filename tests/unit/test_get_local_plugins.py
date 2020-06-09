@@ -1,7 +1,7 @@
 """Tests for get_local_plugins."""
 import mock
 
-from flake8.options import config
+from flake9.options import config
 
 
 def test_get_local_plugins_respects_isolated():
@@ -35,7 +35,7 @@ def test_get_local_plugins_uses_cli_config():
 def test_get_local_plugins():
     """Verify get_local_plugins returns expected plugins."""
     config_fixture_path = 'tests/fixtures/config_files/local-plugin.ini'
-    config_finder = config.ConfigFileFinder('flake8')
+    config_finder = config.ConfigFileFinder('flake9')
 
     with mock.patch.object(config_finder, 'local_config_files') as localcfs:
         localcfs.return_value = [config_fixture_path]

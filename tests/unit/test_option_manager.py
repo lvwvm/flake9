@@ -5,9 +5,9 @@ import os
 import mock
 import pytest
 
-from flake8 import utils
-from flake8.main.options import JobsArgument
-from flake8.options import manager
+from flake9 import utils
+from flake9.main.options import JobsArgument
+from flake9.options import manager
 
 TEST_VERSION = '3.0.0b1'
 
@@ -15,7 +15,7 @@ TEST_VERSION = '3.0.0b1'
 @pytest.fixture
 def optmanager():
     """Generate a simple OptionManager with default test arguments."""
-    return manager.OptionManager(prog='flake8', version=TEST_VERSION)
+    return manager.OptionManager(prog='flake9', version=TEST_VERSION)
 
 
 def test_option_manager_creates_option_parser(optmanager):
@@ -31,7 +31,7 @@ def test_option_manager_including_parent_options():
 
     # WHEN
     optmanager = manager.OptionManager(
-        prog='flake8',
+        prog='flake9',
         version=TEST_VERSION,
         parents=[parent_parser])
     option, _ = optmanager.parse_args(['--parent', 'foo'])
@@ -85,7 +85,7 @@ def test_add_short_and_long_option_names(optmanager):
 
 
 def test_add_option_with_custom_args(optmanager):
-    """Verify that add_option handles custom Flake8 parameters."""
+    """Verify that add_option handles custom Flake9 parameters."""
     assert optmanager.options == []
     assert optmanager.config_options_dict == {}
 
@@ -142,12 +142,12 @@ def test_parse_args_normalize_paths(optmanager):
                           comma_separated_list=True)
 
     options, args = optmanager.parse_args([
-        '--extra-config', '../config.ini,tox.ini,flake8/some-other.cfg'
+        '--extra-config', '../config.ini,tox.ini,flake9/some-other.cfg'
     ])
     assert options.extra_config == [
         os.path.abspath('../config.ini'),
         'tox.ini',
-        os.path.abspath('flake8/some-other.cfg'),
+        os.path.abspath('flake9/some-other.cfg'),
     ]
 
 
@@ -168,12 +168,12 @@ def test_plugins_are_sorted_in_generate_versions(optmanager):
         manager.PluginVersion('pyflakes', '1.5.0', False),
         manager.PluginVersion('mccabe', '0.7.0', False),
         manager.PluginVersion('pycodestyle', '2.2.0', False),
-        manager.PluginVersion('flake8-docstrings', '0.6.1', False),
-        manager.PluginVersion('flake8-bugbear', '2016.12.1', False),
+        manager.PluginVersion('flake9-docstrings', '0.6.1', False),
+        manager.PluginVersion('flake9-bugbear', '2016.12.1', False),
     ]
     assert (optmanager.generate_versions()
-            == 'flake8-bugbear: 2016.12.1, '
-               'flake8-docstrings: 0.6.1, '
+            == 'flake9-bugbear: 2016.12.1, '
+               'flake9-docstrings: 0.6.1, '
                'mccabe: 0.7.0, '
                'pycodestyle: 2.2.0, '
                'pyflakes: 1.5.0')
@@ -369,7 +369,7 @@ def test_parse_invalid_jobs_argument(optmanager, capsys):
     out, err = capsys.readouterr()
     output = out + err
     expected = (
-        "\nflake8: error: argument --jobs: "
+        "\nflake9: error: argument --jobs: "
         "'foo' must be 'auto' or an integer.\n"
     )
     assert expected in output

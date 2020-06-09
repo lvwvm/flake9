@@ -7,4 +7,4 @@
 - **Bug** Fix interleaving of output while using multiprocessing
   (`GitLab#17`_)
 
-.. _GitLab#17: https://gitlab.com/pycqa/flake8/issues/17
+.. _GitLab#17: https://gitlab.com/pycqa/flake9/issues/17

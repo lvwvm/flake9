@@ -2,8 +2,8 @@
 import mock
 import pytest
 
-from flake8.main import debug
-from flake8.options import manager
+from flake9.main import debug
+from flake9.options import manager
 
 
 def test_dependencies():
@@ -63,8 +63,8 @@ def test_information(system, pyversion, pyimpl):
     system.assert_called_once_with()
 
 
-@mock.patch('flake8.main.debug.print')
-@mock.patch('flake8.main.debug.information', return_value={})
+@mock.patch('flake9.main.debug.print')
+@mock.patch('flake9.main.debug.information', return_value={})
 @mock.patch('json.dumps', return_value='{}')
 def test_print_information_no_plugins(dumps, information, print_mock):
     """Verify we print and exit only when we have plugins."""
@@ -78,8 +78,8 @@ def test_print_information_no_plugins(dumps, information, print_mock):
     assert print_mock.called is False
 
 
-@mock.patch('flake8.main.debug.print')
-@mock.patch('flake8.main.debug.information', return_value={})
+@mock.patch('flake9.main.debug.print')
+@mock.patch('flake9.main.debug.information', return_value={})
 @mock.patch('json.dumps', return_value='{}')
 def test_print_information(dumps, information, print_mock):
     """Verify we print and exit only when we have plugins."""
