@@ -2,23 +2,23 @@
 import setuptools
 
 setuptools.setup(
-    name='flake8-example-plugin',
+    name='flake9-example-plugin',
     license='MIT',
     version='1.0.0',
-    description='Example plugin to Flake8',
+    description='Example plugin to Flake9',
     author='Ian Cordasco',
     author_email='graffatcolmingov@gmail.com',
-    url='https://gitlab.com/pycqa/flake8',
+    url='https://gitlab.com/pycqa/flake9',
     package_dir={'': 'src/'},
-    packages=['flake8_example_plugin'],
+    packages=['flake9_example_plugin'],
     entry_points={
-        'flake8.extension': [
-            'X1 = flake8_example_plugin:ExampleOne',
-            'X2 = flake8_example_plugin:ExampleTwo',
+        'flake9.extension': [
+            'X1 = flake9_example_plugin:ExampleOne',
+            'X2 = flake9_example_plugin:ExampleTwo',
         ],
     },
     classifiers=[
-        'Framework :: Flake8',
+        'Framework :: Flake9',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',

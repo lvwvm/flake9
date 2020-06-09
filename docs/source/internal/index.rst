@@ -1,8 +1,8 @@
 ==============================
- Exploring Flake8's Internals
+ Exploring Flake9's Internals
 ==============================
 
-While writing |Flake8| 3.0, the developers attempted to capture some reasoning
+While writing |Flake9| 3.0, the developers attempted to capture some reasoning
 and decision information in internal documentation meant for future developers
 and maintainers. Most of this information is unnecessary for users and plugin
 developers. Some of it, however, is linked to from the plugin development

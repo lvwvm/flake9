@@ -1,7 +1,7 @@
-"""Tests for the flake8.exceptions module."""
+"""Tests for the flake9.exceptions module."""
 import pickle
 
-from flake8 import exceptions
+from flake9 import exceptions
 
 
 class _ExceptionTest:

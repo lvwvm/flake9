@@ -1,7 +1,7 @@
--   id: flake8
-    name: flake8
-    description: '`flake8` is a command-line utility for enforcing style consistency across Python projects.'
-    entry: flake8
+-   id: flake9
+    name: flake9
+    description: '`flake9` is a command-line utility for enforcing style consistency across Python projects.'
+    entry: flake9
     language: python
     types: [python]
     require_serial: true

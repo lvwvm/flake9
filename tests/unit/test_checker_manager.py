@@ -4,8 +4,8 @@ import errno
 import mock
 import pytest
 
-from flake8 import checker
-from flake8.main.options import JobsArgument
+from flake9 import checker
+from flake9.main.options import JobsArgument
 
 
 def style_guide_mock():
@@ -35,7 +35,7 @@ def test_oserrors_cause_serial_fall_back():
     assert serial.call_count == 1
 
 
-@mock.patch('flake8.checker._multiprocessing_is_fork', return_value=True)
+@mock.patch('flake9.checker._multiprocessing_is_fork', return_value=True)
 def test_oserrors_are_reraised(is_windows):
     """Verify that unexpected OSErrors will cause the Manager to reraise."""
     err = OSError(errno.EAGAIN, 'Ominous message')
@@ -50,7 +50,7 @@ def test_oserrors_are_reraised(is_windows):
 def test_multiprocessing_is_disabled():
     """Verify not being able to import multiprocessing forces jobs to 0."""
     style_guide = style_guide_mock()
-    with mock.patch('flake8.checker.multiprocessing', None):
+    with mock.patch('flake9.checker.multiprocessing', None):
         manager = checker.Manager(style_guide, [], [])
         assert manager.jobs == 0
 
@@ -65,13 +65,13 @@ def test_make_checkers():
         'logical_line_plugins': [],
         'physical_line_plugins': [],
     }
-    with mock.patch('flake8.checker.multiprocessing', None):
+    with mock.patch('flake9.checker.multiprocessing', None):
         manager = checker.Manager(style_guide, files, checkplugins)
 
-    with mock.patch('flake8.utils.filenames_from') as filenames_from:
+    with mock.patch('flake9.utils.filenames_from') as filenames_from:
         filenames_from.side_effect = [['file1'], ['file2']]
-        with mock.patch('flake8.utils.fnmatch', return_value=True):
-            with mock.patch('flake8.processor.FileProcessor'):
+        with mock.patch('flake9.utils.fnmatch', return_value=True):
+            with mock.patch('flake9.processor.FileProcessor'):
                 manager.make_checkers()
 
     assert manager._all_checkers

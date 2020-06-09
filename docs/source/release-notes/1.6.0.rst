@@ -1,9 +1,9 @@
 1.6 - 2012-11-16
 ----------------
 
-- changed the signatures of the ``check_file`` function in flake8/run.py,
-  ``skip_warning`` in flake8/util.py and the ``check``, ``checkPath``
-  functions in flake8/pyflakes.py.
+- changed the signatures of the ``check_file`` function in flake9/run.py,
+  ``skip_warning`` in flake9/util.py and the ``check``, ``checkPath``
+  functions in flake9/pyflakes.py.
 - fix ``--exclude`` and ``--ignore`` command flags (#14, #19)
 - fix the git hook that wasn't catching files not already added to the index
   (#29)

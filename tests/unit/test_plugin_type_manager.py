@@ -1,15 +1,15 @@
-"""Tests for flake8.plugins.manager.PluginTypeManager."""
+"""Tests for flake9.plugins.manager.PluginTypeManager."""
 import mock
 import pytest
 
-from flake8 import exceptions
-from flake8.plugins import manager
+from flake9 import exceptions
+from flake9.plugins import manager
 
 TEST_NAMESPACE = "testing.plugin-type-manager"
 
 
 def create_plugin_mock(raise_exception=False):
-    """Create an auto-spec'd mock of a flake8 Plugin."""
+    """Create an auto-spec'd mock of a flake9 Plugin."""
     plugin = mock.create_autospec(manager.Plugin, instance=True)
     if raise_exception:
         plugin.load_plugin.side_effect = exceptions.FailedToLoadPlugin(
@@ -46,7 +46,7 @@ class FakeTestType(manager.PluginTypeManager):
     namespace = TEST_NAMESPACE
 
 
-@mock.patch('flake8.plugins.manager.PluginManager')
+@mock.patch('flake9.plugins.manager.PluginManager')
 def test_instantiates_a_manager(PluginManager):  # noqa: N803
     """Verify we create a PluginManager on instantiation."""
     FakeTestType()
@@ -54,7 +54,7 @@ def test_instantiates_a_manager(PluginManager):  # noqa: N803
     PluginManager.assert_called_once_with(TEST_NAMESPACE, local_plugins=None)
 
 
-@mock.patch('flake8.plugins.manager.PluginManager')
+@mock.patch('flake9.plugins.manager.PluginManager')
 def test_proxies_names_to_manager(PluginManager):  # noqa: N803
     """Verify we proxy the names attribute."""
     PluginManager.return_value = mock.Mock(names=[
@@ -65,7 +65,7 @@ def test_proxies_names_to_manager(PluginManager):  # noqa: N803
     assert type_mgr.names == ['T100', 'T200', 'T300']
 
 
-@mock.patch('flake8.plugins.manager.PluginManager')
+@mock.patch('flake9.plugins.manager.PluginManager')
 def test_proxies_plugins_to_manager(PluginManager):  # noqa: N803
     """Verify we proxy the plugins attribute."""
     PluginManager.return_value = mock.Mock(plugins=[
@@ -88,7 +88,7 @@ def test_generate_call_function():
     assert func(plugin) is optmanager
 
 
-@mock.patch('flake8.plugins.manager.PluginManager')
+@mock.patch('flake9.plugins.manager.PluginManager')
 def test_load_plugins(PluginManager):  # noqa: N803
     """Verify load plugins loads *every* plugin."""
     # Create a bunch of fake plugins
@@ -108,7 +108,7 @@ def test_load_plugins(PluginManager):  # noqa: N803
     assert type_mgr.plugins_loaded is True
 
 
-@mock.patch('flake8.plugins.manager.PluginManager')
+@mock.patch('flake9.plugins.manager.PluginManager')
 def test_load_plugins_fails(PluginManager):  # noqa: N803
     """Verify load plugins bubbles up exceptions."""
     plugins = [create_plugin_mock(), create_plugin_mock(True),
@@ -132,7 +132,7 @@ def test_load_plugins_fails(PluginManager):  # noqa: N803
         assert plugin.load_plugin.called is False
 
 
-@mock.patch('flake8.plugins.manager.PluginManager')
+@mock.patch('flake9.plugins.manager.PluginManager')
 def test_register_options(PluginManager):  # noqa: N803
     """Test that we map over every plugin to register options."""
     plugins = [create_plugin_mock(), create_plugin_mock(),
@@ -150,7 +150,7 @@ def test_register_options(PluginManager):  # noqa: N803
         plugin.register_options.assert_called_with(optmanager)
 
 
-@mock.patch('flake8.plugins.manager.PluginManager')
+@mock.patch('flake9.plugins.manager.PluginManager')
 def test_provide_options(PluginManager):  # noqa: N803
     """Test that we map over every plugin to provide parsed options."""
     plugins = [create_plugin_mock(), create_plugin_mock(),
@@ -171,7 +171,7 @@ def test_provide_options(PluginManager):  # noqa: N803
                                                   [])
 
 
-@mock.patch('flake8.plugins.manager.PluginManager')
+@mock.patch('flake9.plugins.manager.PluginManager')
 def test_proxy_contains_to_managers_plugins_dict(PluginManager):  # noqa: N803
     """Verify that we proxy __contains__ to the manager's dictionary."""
     plugins = {'T10%i' % i: create_plugin_mock() for i in range(8)}
@@ -184,7 +184,7 @@ def test_proxy_contains_to_managers_plugins_dict(PluginManager):  # noqa: N803
         assert key in type_mgr
 
 
-@mock.patch('flake8.plugins.manager.PluginManager')
+@mock.patch('flake9.plugins.manager.PluginManager')
 def test_proxies_getitem_to_managers_plugins_dict(PluginManager):  # noqa: N803
     """Verify that we can use the PluginTypeManager like a dictionary."""
     plugins = {'T10%i' % i: create_plugin_mock() for i in range(8)}

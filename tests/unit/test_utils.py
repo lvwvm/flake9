@@ -1,15 +1,15 @@
-"""Tests for flake8's utils module."""
+"""Tests for flake9's utils module."""
 import logging
 import os
 
 import mock
 import pytest
 
-from flake8 import exceptions
-from flake8 import utils
-from flake8.plugins import manager as plugin_manager
+from flake9 import exceptions
+from flake9 import utils
+from flake9.plugins import manager as plugin_manager
 
-RELATIVE_PATHS = ["flake8", "pep8", "pyflakes", "mccabe"]
+RELATIVE_PATHS = ["flake9", "pep8", "pyflakes", "mccabe"]
 
 
 @pytest.mark.parametrize("value,expected", [
@@ -119,9 +119,9 @@ def test_invalid_file_list(value):
 
 
 @pytest.mark.parametrize("value,expected", [
-    ("flake8", "flake8"),
-    ("../flake8", os.path.abspath("../flake8")),
-    ("flake8/", os.path.abspath("flake8")),
+    ("flake9", "flake9"),
+    ("../flake9", os.path.abspath("../flake9")),
+    ("flake9/", os.path.abspath("flake9")),
 ])
 def test_normalize_path(value, expected):
     """Verify that we normalize paths provided to the tool."""
@@ -129,9 +129,9 @@ def test_normalize_path(value, expected):
 
 
 @pytest.mark.parametrize("value,expected", [
-    (["flake8", "pep8", "pyflakes", "mccabe"],
-        ["flake8", "pep8", "pyflakes", "mccabe"]),
-    (["../flake8", "../pep8", "../pyflakes", "../mccabe"],
+    (["flake9", "pep8", "pyflakes", "mccabe"],
+        ["flake9", "pep8", "pyflakes", "mccabe"]),
+    (["../flake9", "../pep8", "../pyflakes", "../mccabe"],
         [os.path.abspath("../" + p) for p in RELATIVE_PATHS]),
 ])
 def test_normalize_paths(value, expected):
@@ -229,7 +229,7 @@ def test_filenames_from_exclude_doesnt_exclude_directory_names(tmpdir):
     tmpdir.join('2').join('1').ensure_dir().join('return_me.py').ensure()
     exclude = [tmpdir.join('1').strpath]
 
-    # This acts similar to src.flake8.checker.is_path_excluded
+    # This acts similar to src.flake9.checker.is_path_excluded
     def predicate(pth):
         return utils.fnmatch(os.path.abspath(pth), exclude)
 
@@ -273,16 +273,16 @@ def read_diff_file(filename):
 
 SINGLE_FILE_DIFF = read_diff_file('tests/fixtures/diffs/single_file_diff')
 SINGLE_FILE_INFO = {
-    'flake8/utils.py': set(range(75, 83)).union(set(range(84, 94))),
+    'flake9/utils.py': set(range(75, 83)).union(set(range(84, 94))),
 }
 TWO_FILE_DIFF = read_diff_file('tests/fixtures/diffs/two_file_diff')
 TWO_FILE_INFO = {
-    'flake8/utils.py': set(range(75, 83)).union(set(range(84, 94))),
+    'flake9/utils.py': set(range(75, 83)).union(set(range(84, 94))),
     'tests/unit/test_utils.py': set(range(115, 128)),
 }
 MULTI_FILE_DIFF = read_diff_file('tests/fixtures/diffs/multi_file_diff')
 MULTI_FILE_INFO = {
-    'flake8/utils.py': set(range(75, 83)).union(set(range(84, 94))),
+    'flake9/utils.py': set(range(75, 83)).union(set(range(84, 94))),
     'tests/unit/test_utils.py': set(range(115, 129)),
     'tests/fixtures/diffs/single_file_diff': set(range(1, 28)),
     'tests/fixtures/diffs/two_file_diff': set(range(1, 46)),

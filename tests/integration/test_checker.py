@@ -2,10 +2,10 @@
 import mock
 import pytest
 
-from flake8 import checker
-from flake8._compat import importlib_metadata
-from flake8.plugins import manager
-from flake8.processor import FileProcessor
+from flake9 import checker
+from flake9._compat import importlib_metadata
+from flake9.plugins import manager
+from flake9.processor import FileProcessor
 
 PHYSICAL_LINE = "# Physical line content"
 
@@ -106,12 +106,12 @@ def mock_file_checker_with_plugin(plugin_target):
     with mock.patch.object(
             importlib_metadata,
             'entry_points',
-            return_value={'flake8.extension': [entry_point]},
+            return_value={'flake9.extension': [entry_point]},
     ):
         checks = manager.Checkers()
 
     # Prevent it from reading lines from stdin or somewhere else
-    with mock.patch('flake8.processor.FileProcessor.read_lines',
+    with mock.patch('flake9.processor.FileProcessor.read_lines',
                     return_value=['Line 1']):
         file_checker = checker.FileChecker(
             '-',

@@ -1,23 +1,23 @@
-"""Unit tests for flake8.options.config.MergedConfigParser."""
+"""Unit tests for flake9.options.config.MergedConfigParser."""
 import os
 
 import mock
 import pytest
 
-from flake8.options import config
-from flake8.options import manager
+from flake9.options import config
+from flake9.options import manager
 
 
 @pytest.fixture
 def optmanager():
     """Generate an OptionManager with simple values."""
-    return manager.OptionManager(prog='flake8', version='3.0.0a1')
+    return manager.OptionManager(prog='flake9', version='3.0.0a1')
 
 
 @pytest.fixture
 def config_finder():
     """Generate a simple ConfigFileFinder."""
-    return config.ConfigFileFinder('flake8')
+    return config.ConfigFileFinder('flake9')
 
 
 def test_parse_cli_config(optmanager, config_finder):
@@ -48,7 +48,7 @@ def test_parse_cli_config(optmanager, config_finder):
 
 @pytest.mark.parametrize('filename,is_configured_by', [
     ('tests/fixtures/config_files/cli-specified.ini', True),
-    ('tests/fixtures/config_files/no-flake8-section.ini', False),
+    ('tests/fixtures/config_files/no-flake9-section.ini', False),
 ])
 def test_is_configured_by(
         filename, is_configured_by, optmanager, config_finder):

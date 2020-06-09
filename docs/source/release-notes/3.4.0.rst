@@ -22,20 +22,20 @@ You can view the `3.4.0 milestone`_ on GitLab for more details.
 
 .. all links
 .. _3.4.0 milestone:
-    https://gitlab.com/pycqa/flake8/milestones/18
+    https://gitlab.com/pycqa/flake9/milestones/18
 
 .. issue links
 .. _GitLab#318:
-    https://gitlab.com/pycqa/flake8/issues/318
+    https://gitlab.com/pycqa/flake9/issues/318
 .. _GitLab#329:
-    https://gitlab.com/pycqa/flake8/issues/329
+    https://gitlab.com/pycqa/flake9/issues/329
 .. _GitLab#330:
-    https://gitlab.com/pycqa/flake8/issues/330
+    https://gitlab.com/pycqa/flake9/issues/330
 .. _GitLab#341:
-    https://gitlab.com/pycqa/flake8/issues/341
+    https://gitlab.com/pycqa/flake9/issues/341
 
 .. merge request links
 .. _GitLab!193:
-    https://gitlab.com/pycqa/flake8/merge_requests/193
+    https://gitlab.com/pycqa/flake9/merge_requests/193
 .. _GitLab!194:
-    https://gitlab.com/pycqa/flake8/merge_requests/194
+    https://gitlab.com/pycqa/flake9/merge_requests/194

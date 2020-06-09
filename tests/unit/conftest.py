@@ -17,5 +17,5 @@ def options_from(**kwargs):
 
 @pytest.fixture
 def default_options():
-    """Fixture returning the default options of flake8."""
+    """Fixture returning the default options of flake9."""
     return options_from()
