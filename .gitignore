@@ -13,3 +13,4 @@
 build
 dist
 docs/build/html/*
+venv/
