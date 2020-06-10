@@ -252,6 +252,24 @@ Or they could use each comment to describe **why** they've ignored the check.
 these situations.
 
 
+``pyproject.toml``
+------------------
+
+|Flake9| supports reading configuration from a ``pyproject.toml`` file per `PEP 518 <https://www.python.org/peps/pep-0518/>`_. If the ``toml`` module (`<https://pypi.org/project/toml>`_) is installed, it will be used to load configuration from a ``tool.flake9`` section in a file called ``pyproject.toml`` in `TOML <https://github.com/toml-lang/toml>`_ format.
+
+For example:
+
+.. code-block:: toml
+
+    [tool.flake9]
+    max-line-length = 88
+
+.. |toml| replace:: ``toml``
+
+|Flake9| will look for the ``pyproject.toml`` file recursively up from the current directory by up to 25 directories.
+
+This is the only new feature added by |Flake9| compared to |Flake8|.
+
 Using Local Plugins
 -------------------
 

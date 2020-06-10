@@ -2,6 +2,12 @@
  Flake9
 ========
 
+Flake9 is a fork of Flake8 that supports reading configuration from a ``pyproject.toml`` file.
+
+========================
+ Original Flake8 README
+========================
+
 Flake9 is a wrapper around these tools:
 
 - PyFlakes
