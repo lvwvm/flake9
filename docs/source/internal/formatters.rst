@@ -2,12 +2,12 @@
  Built-in Formatters
 =====================
 
-By default |Flake9| has two formatters built-in, ``default`` and ``pylint``.
+By default |Flake8| has two formatters built-in, ``default`` and ``pylint``.
 These correspond to two classes |DefaultFormatter| and |PylintFormatter|.
 
-In |Flake9| 2.0, pep8 handled formatting of errors and also allowed users to
+In |Flake8| 2.0, pep8 handled formatting of errors and also allowed users to
 specify an arbitrary format string as a parameter to ``--format``. In order
-to allow for this backwards compatibility, |Flake9| 3.0 made two choices:
+to allow for this backwards compatibility, |Flake8| 3.0 made two choices:
 
 #. To not limit a user's choices for ``--format`` to the format class names
 
@@ -30,7 +30,7 @@ The former allows us to inspect the value provided to ``--format`` by the
 user and alter our own format based on that value. The second simply uses
 that format string to format the error.
 
-.. autoclass:: flake9.formatting.default.Default
+.. autoclass:: flake8.formatting.default.Default
     :members:
 
 Pylint Formatter
@@ -39,9 +39,9 @@ Pylint Formatter
 The |PylintFormatter| simply defines the default Pylint format string from
 pep8: ``'%(path)s:%(row)d: [%(code)s] %(text)s'``.
 
-.. autoclass:: flake9.formatting.default.Pylint
+.. autoclass:: flake8.formatting.default.Pylint
     :members:
 
 
-.. |DefaultFormatter| replace:: :class:`~flake9.formatting.default.Default`
-.. |PylintFormatter| replace:: :class:`~flake9.formatting.default.Pylint`
+.. |DefaultFormatter| replace:: :class:`~flake8.formatting.default.Default`
+.. |PylintFormatter| replace:: :class:`~flake8.formatting.default.Pylint`

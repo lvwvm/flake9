@@ -19,109 +19,109 @@
 
         .. prompt:: bash
 
-            flake9 --<opt-name>[=<example-parameter(s)>] [positional params]
+            flake8 --<opt-name>[=<example-parameter(s)>] [positional params]
 
         This **can[ not]** be specified in config files.
 
         (If it can be, an example using .. code-block:: ini)
 
-    Thank you for your contribution to Flake9's documentation.
+    Thank you for your contribution to Flake8's documentation.
 
 .. _top:
 
 Index of Options
 ================
 
-- :option:`flake9 --version`
+- :option:`flake8 --version`
 
-- :option:`flake9 --help`
+- :option:`flake8 --help`
 
-- :option:`flake9 --verbose`
+- :option:`flake8 --verbose`
 
-- :option:`flake9 --quiet`
+- :option:`flake8 --quiet`
 
-- :option:`flake9 --count`
+- :option:`flake8 --count`
 
-- :option:`flake9 --diff`
+- :option:`flake8 --diff`
 
-- :option:`flake9 --exclude`
+- :option:`flake8 --exclude`
 
-- :option:`flake9 --filename`
+- :option:`flake8 --filename`
 
-- :option:`flake9 --stdin-display-name`
+- :option:`flake8 --stdin-display-name`
 
-- :option:`flake9 --format`
+- :option:`flake8 --format`
 
-- :option:`flake9 --hang-closing`
+- :option:`flake8 --hang-closing`
 
-- :option:`flake9 --ignore`
+- :option:`flake8 --ignore`
 
-- :option:`flake9 --extend-ignore`
+- :option:`flake8 --extend-ignore`
 
-- :option:`flake9 --per-file-ignores`
+- :option:`flake8 --per-file-ignores`
 
-- :option:`flake9 --max-line-length`
+- :option:`flake8 --max-line-length`
 
-- :option:`flake9 --max-doc-length`
+- :option:`flake8 --max-doc-length`
 
-- :option:`flake9 --select`
+- :option:`flake8 --select`
 
-- :option:`flake9 --disable-noqa`
+- :option:`flake8 --disable-noqa`
 
-- :option:`flake9 --show-source`
+- :option:`flake8 --show-source`
 
-- :option:`flake9 --statistics`
+- :option:`flake8 --statistics`
 
-- :option:`flake9 --enable-extensions`
+- :option:`flake8 --enable-extensions`
 
-- :option:`flake9 --exit-zero`
+- :option:`flake8 --exit-zero`
 
-- :option:`flake9 --install-hook`
+- :option:`flake8 --install-hook`
 
-- :option:`flake9 --jobs`
+- :option:`flake8 --jobs`
 
-- :option:`flake9 --output-file`
+- :option:`flake8 --output-file`
 
-- :option:`flake9 --tee`
+- :option:`flake8 --tee`
 
-- :option:`flake9 --append-config`
+- :option:`flake8 --append-config`
 
-- :option:`flake9 --config`
+- :option:`flake8 --config`
 
-- :option:`flake9 --isolated`
+- :option:`flake8 --isolated`
 
-- :option:`flake9 --builtins`
+- :option:`flake8 --builtins`
 
-- :option:`flake9 --doctests`
+- :option:`flake8 --doctests`
 
-- :option:`flake9 --include-in-doctest`
+- :option:`flake8 --include-in-doctest`
 
-- :option:`flake9 --exclude-from-doctest`
+- :option:`flake8 --exclude-from-doctest`
 
-- :option:`flake9 --benchmark`
+- :option:`flake8 --benchmark`
 
-- :option:`flake9 --bug-report`
+- :option:`flake8 --bug-report`
 
-- :option:`flake9 --max-complexity`
+- :option:`flake8 --max-complexity`
 
 
 Options and their Descriptions
 ==============================
 
-.. program:: flake9
+.. program:: flake8
 
 .. option:: --version
 
     :ref:`Go back to index <top>`
 
-    Show |Flake9|'s version as well as the versions of all plugins
+    Show |Flake8|'s version as well as the versions of all plugins
     installed.
 
     Command-line usage:
 
     .. prompt:: bash
 
-        flake9 --version
+        flake8 --version
 
     This **can not** be specified in config files.
 
@@ -130,14 +130,14 @@ Options and their Descriptions
 
     :ref:`Go back to index <top>`
 
-    Show a description of how to use |Flake9| and its options.
+    Show a description of how to use |Flake8| and its options.
 
     Command-line usage:
 
     .. prompt:: bash
 
-        flake9 --help
-        flake9 -h
+        flake8 --help
+        flake8 -h
 
     This **can not** be specified in config files.
 
@@ -146,14 +146,14 @@ Options and their Descriptions
 
     :ref:`Go back to index <top>`
 
-    Increase the verbosity of |Flake9|'s output. Each time you specify
+    Increase the verbosity of |Flake8|'s output. Each time you specify
     it, it will print more and more information.
 
     Command-line example:
 
     .. prompt:: bash
 
-        flake9 -vv
+        flake8 -vv
 
     This **can not** be specified in config files.
 
@@ -162,14 +162,14 @@ Options and their Descriptions
 
     :ref:`Go back to index <top>`
 
-    Decrease the verbosity of |Flake9|'s output. Each time you specify it,
+    Decrease the verbosity of |Flake8|'s output. Each time you specify it,
     it will print less and less information.
 
     Command-line example:
 
     .. prompt:: bash
 
-        flake9 -q
+        flake8 -q
 
     This **can** be specified in config files.
 
@@ -190,7 +190,7 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        flake9 --count dir/
+        flake8 --count dir/
 
     This **can** be specified in config files.
 
@@ -212,7 +212,7 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        git diff -u | flake9 --diff
+        git diff -u | flake8 --diff
 
     This **can not** be specified in config files.
 
@@ -238,7 +238,7 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        flake9 --exclude=*.pyc dir/
+        flake8 --exclude=*.pyc dir/
 
     This **can** be specified in config files.
 
@@ -269,7 +269,7 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        flake9 --extend-exclude=legacy/,vendor/ dir/
+        flake8 --extend-exclude=legacy/,vendor/ dir/
 
     This **can** be specified in config files.
 
@@ -304,7 +304,7 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        flake9 --filename=*.py dir/
+        flake8 --filename=*.py dir/
 
     This **can** be specified in config files.
 
@@ -338,7 +338,7 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        cat file.py | flake9 --stdin-display-name=file.py -
+        cat file.py | flake8 --stdin-display-name=file.py -
 
     This **can not** be specified in config files.
 
@@ -376,8 +376,8 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        flake9 --format=pylint dir/
-        flake9 --format='%(path)s::%(row)d,%(col)d::%(code)s::%(text)s' dir/
+        flake8 --format=pylint dir/
+        flake8 --format='%(path)s::%(row)d,%(col)d::%(code)s::%(text)s' dir/
 
     This **can** be specified in config files.
 
@@ -401,7 +401,7 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        flake9 --hang-closing dir/
+        flake8 --hang-closing dir/
 
     This **can** be specified in config files.
 
@@ -419,7 +419,7 @@ Options and their Descriptions
 
     Specify a list of codes to ignore. The list is expected to be
     comma-separated, and does not need to specify an error code exactly.
-    Since |Flake9| 3.0, this **can** be combined with :option:`--select`. See
+    Since |Flake8| 3.0, this **can** be combined with :option:`--select`. See
     :option:`--select` for more information.
 
     For example, if you wish to only ignore ``W234``, then you can specify
@@ -433,8 +433,8 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        flake9 --ignore=E121,E123 dir/
-        flake9 --ignore=E24,E704 dir/
+        flake8 --ignore=E121,E123 dir/
+        flake8 --ignore=E24,E704 dir/
 
     This **can** be specified in config files.
 
@@ -466,7 +466,7 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        flake9 --extend-ignore=E4,E51,W234 dir/
+        flake8 --extend-ignore=E4,E51,W234 dir/
 
     This **can** be specified in config files.
 
@@ -503,8 +503,8 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        flake9 --per-file-ignores='project/__init__.py:F401 setup.py:E121'
-        flake9 --per-file-ignores='project/*/__init__.py:F401 setup.py:E121'
+        flake8 --per-file-ignores='project/__init__.py:F401 setup.py:E121'
+        flake8 --per-file-ignores='project/*/__init__.py:F401 setup.py:E121'
 
     This **can** be specified in config files.
 
@@ -538,7 +538,7 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        flake9 --max-line-length 99 dir/
+        flake8 --max-line-length 99 dir/
 
     This **can** be specified in config files.
 
@@ -560,7 +560,7 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        flake9 --max-doc-length 99 dir/
+        flake8 --max-doc-length 99 dir/
 
     This **can** be specified in config files.
 
@@ -575,7 +575,7 @@ Options and their Descriptions
 
     :ref:`Go back to index <top>`
 
-    Specify the list of error codes you wish |Flake9| to report. Similarly to
+    Specify the list of error codes you wish |Flake8| to report. Similarly to
     :option:`--ignore`. You can specify a portion of an error code to get all
     that start with that string. For example, you can use ``E``, ``E4``,
     ``E43``, and ``E431``.
@@ -586,17 +586,17 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        flake9 --select=E431,E5,W,F dir/
-        flake9 --select=E,W dir/
+        flake8 --select=E431,E5,W,F dir/
+        flake8 --select=E,W dir/
 
     This can also be combined with :option:`--ignore`:
 
     .. prompt:: bash
 
-        flake9 --select=E --ignore=E432 dir/
+        flake8 --select=E --ignore=E432 dir/
 
     This will report all codes that start with ``E``, but ignore ``E432``
-    specifically. This is more flexibly than the |Flake9| 2.x and 1.x used
+    specifically. This is more flexibly than the |Flake8| 2.x and 1.x used
     to be.
 
     This **can** be specified in config files.
@@ -625,7 +625,7 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        flake9 --disable-noqa dir/
+        flake8 --disable-noqa dir/
 
     This **can** be specified in config files.
 
@@ -647,7 +647,7 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        flake9 --show-source dir/
+        flake8 --show-source dir/
 
     This **can** be specified in config files.
 
@@ -670,7 +670,7 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        flake9 --statistics
+        flake8 --statistics
 
     This **can** be specified in config files.
 
@@ -687,7 +687,7 @@ Options and their Descriptions
 
     Enable off-by-default extensions.
 
-    Plugins to |Flake9| have the option of registering themselves as
+    Plugins to |Flake8| have the option of registering themselves as
     off-by-default. These plugins effectively add themselves to the
     default ignore list.
 
@@ -695,7 +695,7 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        flake9 --enable-extensions=H111 dir/
+        flake8 --enable-extensions=H111 dir/
 
     This **can** be specified in config files.
 
@@ -715,15 +715,15 @@ Options and their Descriptions
 
     :ref:`Go back to index <top>`
 
-    Force |Flake9| to use the exit status code 0 even if there are errors.
+    Force |Flake8| to use the exit status code 0 even if there are errors.
 
-    By default |Flake9| will exit with a non-zero integer if there are errors.
+    By default |Flake8| will exit with a non-zero integer if there are errors.
 
     Command-line example:
 
     .. prompt:: bash
 
-        flake9 --exit-zero dir/
+        flake8 --exit-zero dir/
 
     This **can not** be specified in config files.
 
@@ -744,8 +744,8 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        flake9 --install-hook=git
-        flake9 --install-hook=mercurial
+        flake8 --install-hook=git
+        flake8 --install-hook=mercurial
 
     This **can not** be specified in config files.
 
@@ -754,7 +754,7 @@ Options and their Descriptions
 
     :ref:`Go back to index <top>`
 
-    Specify the number of subprocesses that |Flake9| will use to run checks in
+    Specify the number of subprocesses that |Flake8| will use to run checks in
     parallel.
 
     .. note::
@@ -771,7 +771,7 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        flake9 --jobs=8 dir/
+        flake8 --jobs=8 dir/
 
     This **can** be specified in config files.
 
@@ -792,8 +792,8 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        flake9 --output-file=output.txt dir/
-        flake9 -vv --output-file=output.txt dir/
+        flake8 --output-file=output.txt dir/
+        flake8 -vv --output-file=output.txt dir/
 
     This **can** be specified in config files.
 
@@ -815,7 +815,7 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        flake9 --tee --output-file=output.txt dir/
+        flake8 --tee --output-file=output.txt dir/
 
     This **can** be specified in config files.
 
@@ -834,7 +834,7 @@ Options and their Descriptions
     .. versionadded:: 3.6.0
 
     Provide extra config files to parse in after and in addition to the files
-    that |Flake9| found on its own. Since these files are the last ones read
+    that |Flake8| found on its own. Since these files are the last ones read
     into the Configuration Parser, so it has the highest precedence if it
     provides an option specified in another config file.
 
@@ -842,7 +842,7 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        flake9 --append-config=my-extra-config.ini dir/
+        flake8 --append-config=my-extra-config.ini dir/
 
     This **can not** be specified in config files.
 
@@ -852,14 +852,14 @@ Options and their Descriptions
     :ref:`Go back to index <top>`
 
     Provide a path to a config file that will be the only config file read and
-    used. This will cause |Flake9| to ignore all other config files that
+    used. This will cause |Flake8| to ignore all other config files that
     exist.
 
     Command-line example:
 
     .. prompt:: bash
 
-        flake9 --config=my-only-config.ini dir/
+        flake8 --config=my-only-config.ini dir/
 
     This **can not** be specified in config files.
 
@@ -868,14 +868,14 @@ Options and their Descriptions
 
     :ref:`Go back to index <top>`
 
-    Ignore any config files and use |Flake9| as if there were no config files
+    Ignore any config files and use |Flake8| as if there were no config files
     found.
 
     Command-line example:
 
     .. prompt:: bash
 
-        flake9 --isolated dir/
+        flake8 --isolated dir/
 
     This **can not** be specified in config files.
 
@@ -896,7 +896,7 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        flake9 --builtins=_,_LE,_LW dir/
+        flake8 --builtins=_,_LE,_LW dir/
 
     This **can** be specified in config files.
 
@@ -922,7 +922,7 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        flake9 --doctests dir/
+        flake8 --doctests dir/
 
     This **can** be specified in config files.
 
@@ -945,7 +945,7 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        flake9 --include-in-doctest=dir/subdir/file.py,dir/other/file.py dir/
+        flake8 --include-in-doctest=dir/subdir/file.py,dir/other/file.py dir/
 
     This **can** be specified in config files.
 
@@ -973,7 +973,7 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        flake9 --exclude-in-doctest=dir/subdir/file.py,dir/other/file.py dir/
+        flake8 --exclude-in-doctest=dir/subdir/file.py,dir/other/file.py dir/
 
     This **can** be specified in config files.
 
@@ -993,7 +993,7 @@ Options and their Descriptions
 
     :ref:`Go back to index <top>`
 
-    Collect and print benchmarks for this run of |Flake9|. This aggregates the
+    Collect and print benchmarks for this run of |Flake8|. This aggregates the
     total number of:
 
     - tokens
@@ -1007,7 +1007,7 @@ Options and their Descriptions
 
     .. prompt:: bash
 
-        flake9 --benchmark dir/
+        flake8 --benchmark dir/
 
     This **can not** be specified in config files.
 
@@ -1016,15 +1016,15 @@ Options and their Descriptions
 
     :ref:`Go back to index <top>`
 
-    Generate information necessary to file a complete bug report for Flake9.
+    Generate information necessary to file a complete bug report for Flake8.
     This will pretty-print a JSON blob that should be copied and pasted into a
-    bug report for Flake9.
+    bug report for Flake8.
 
     Command-line usage:
 
     .. prompt:: bash
 
-        flake9 --bug-report
+        flake8 --bug-report
 
     The output should look vaguely like:
 
@@ -1068,13 +1068,13 @@ Options and their Descriptions
 
     Set the maximum allowed McCabe complexity value for a block of code.
 
-    This option is provided by the ``mccabe`` dependency's |Flake9| plugin.
+    This option is provided by the ``mccabe`` dependency's |Flake8| plugin.
 
     Command-line usage:
 
     .. prompt:: bash
 
-        flake9 --max-complexity 15 dir/
+        flake8 --max-complexity 15 dir/
 
     This **can** be specified in config files.
 

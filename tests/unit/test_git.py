@@ -2,7 +2,7 @@
 import mock
 import pytest
 
-from flake9.main import git
+from flake8.main import git
 
 
 @pytest.mark.parametrize('lazy', [True, False])
@@ -22,7 +22,7 @@ def test_find_modified_files(lazy):
     mocked_popen = mock.Mock()
     mocked_popen.communicate.return_value = ('', '')
 
-    with mock.patch('flake9.main.git.piped_process') as piped_process:
+    with mock.patch('flake8.main.git.piped_process') as piped_process:
         piped_process.return_value = mocked_popen
         git.find_modified_files(lazy)
 

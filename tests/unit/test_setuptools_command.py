@@ -2,7 +2,7 @@
 import pytest
 from setuptools import dist
 
-from flake9.main import setuptools_command
+from flake8.main import setuptools_command
 
 
 @pytest.fixture
@@ -20,8 +20,8 @@ def distribution():
 
 @pytest.fixture
 def command(distribution):
-    """Create an instance of Flake9's setuptools command."""
-    return setuptools_command.Flake9(distribution)
+    """Create an instance of Flake8's setuptools command."""
+    return setuptools_command.Flake8(distribution)
 
 
 def test_package_files_removes_submodules(command):

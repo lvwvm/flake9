@@ -2,7 +2,7 @@
  Release Notes and History
 ===========================
 
-All of the release notes that have been recorded for Flake9 are organized here
+All of the release notes that have been recorded for Flake8 are organized here
 with the newest releases first.
 
 3.x Release Series

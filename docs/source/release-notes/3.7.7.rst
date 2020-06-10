@@ -6,18 +6,18 @@ You can view the `3.7.7 milestone`_ on GitLab for more details.
 Bugs Fixed
 ~~~~~~~~~~
 
-- Fix crahes in plugins causing ``flake9`` to hang while unpickling errors (See
+- Fix crahes in plugins causing ``flake8`` to hang while unpickling errors (See
   also `GitLab!308`_, `GitLab#505`_)
 
 
 .. all links
 .. _3.7.7 milestone:
-    https://gitlab.com/pycqa/flake9/milestones/30
+    https://gitlab.com/pycqa/flake8/milestones/30
 
 .. issue links
 .. _GitLab#505:
-    https://gitlab.com/pycqa/flake9/issues/505
+    https://gitlab.com/pycqa/flake8/issues/505
 
 .. merge request links
 .. _GitLab!308:
-    https://gitlab.com/pycqa/flake9/merge_requests/308
+    https://gitlab.com/pycqa/flake8/merge_requests/308

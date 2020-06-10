@@ -1,59 +1,59 @@
 .. _invocation:
 
 =================
- Invoking Flake9
+ Invoking Flake8
 =================
 
-Once you have :ref:`installed <installation-guide>` |Flake9|, you can begin
-using it. Most of the time, you will be able to generically invoke |Flake9|
+Once you have :ref:`installed <installation-guide>` |Flake8|, you can begin
+using it. Most of the time, you will be able to generically invoke |Flake8|
 like so:
 
 .. prompt:: bash
 
-    flake9 ...
+    flake8 ...
 
-Where you simply allow the shell running in your terminal to locate |Flake9|.
-In some cases, though, you may have installed |Flake9| for multiple versions
+Where you simply allow the shell running in your terminal to locate |Flake8|.
+In some cases, though, you may have installed |Flake8| for multiple versions
 of Python (e.g., Python 2.7 and Python 3.5) and you need to call a specific
 version. In that case, you will have much better results using:
 
 .. prompt:: bash
 
-    python2.7 -m flake9
+    python2.7 -m flake8
 
 Or
 
 .. prompt:: bash
 
-    python3.5 -m flake9
+    python3.5 -m flake8
 
-Since that will tell the correct version of Python to run |Flake9|.
+Since that will tell the correct version of Python to run |Flake8|.
 
 .. note::
 
-    Installing |Flake9| once will not install it on both Python 2.7 and
+    Installing |Flake8| once will not install it on both Python 2.7 and
     Python 3.5. It will only install it for the version of Python that
     is running pip.
 
-It is also possible to specify command-line options directly to |Flake9|:
+It is also possible to specify command-line options directly to |Flake8|:
 
 .. prompt:: bash
 
-    flake9 --select E123
+    flake8 --select E123
 
 Or
 
 .. prompt:: bash
 
-    python<version> -m flake9 --select E123
+    python<version> -m flake8 --select E123
 
 .. note::
 
     This is the last time we will show both versions of an invocation.
-    From now on, we'll simply use ``flake9`` and assume that the user
-    knows they can instead use ``python<version> -m flake9`` instead.
+    From now on, we'll simply use ``flake8`` and assume that the user
+    knows they can instead use ``python<version> -m flake8`` instead.
 
-It's also possible to narrow what |Flake9| will try to check by specifying
+It's also possible to narrow what |Flake8| will try to check by specifying
 exactly the paths and directories you want it to check. Let's assume that
 we have a directory with python files and sub-directories which have python
 files (and may have more sub-directories) called ``my_project``. Then if
@@ -61,33 +61,33 @@ we only want errors from files found inside ``my_project`` we can do:
 
 .. prompt:: bash
 
-    flake9 my_project
+    flake8 my_project
 
 And if we only want certain errors (e.g., ``E123``) from files in that
 directory we can also do:
 
 .. prompt:: bash
 
-    flake9 --select E123 my_project
+    flake8 --select E123 my_project
 
 If you want to explore more options that can be passed on the command-line,
 you can use the ``--help`` option:
 
 .. prompt:: bash
 
-    flake9 --help
+    flake8 --help
 
 And you should see something like:
 
 .. code::
 
-    Usage: flake9 [options] file file ...
+    Usage: flake8 [options] file file ...
 
     Options:
       --version             show program's version number and exit
       -h, --help            show this help message and exit
       -v, --verbose         Print more information about what is happening in
-                            flake9. This option is repeatable and will increase
+                            flake8. This option is repeatable and will increase
                             verbosity each time it is repeated.
       -q, --quiet           Report only file names, or nothing. This option is
                             repeatable.
@@ -132,11 +132,11 @@ And you should see something like:
       --tee                 Write to stdout and output-file.
       --append-config=APPEND_CONFIG
                             Provide extra config files to parse in addition to the
-                            files found by Flake9 by default. These files are the
+                            files found by Flake8 by default. These files are the
                             last ones read and so they take the highest precedence
                             when multiple files provide the same option.
       --config=CONFIG       Path to the config file that will be the authoritative
-                            config source. This will cause Flake9 to ignore all
+                            config source. This will cause Flake8 to ignore all
                             other configuration files.
       --isolated            Ignore all configuration files.
       --builtins=BUILTINS   define more built-ins, comma separated

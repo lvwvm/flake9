@@ -2,7 +2,7 @@
 parallel = True
 branch = True
 source =
-    flake9
+    flake8
     tests
 omit =
     # Don't complain if non-runnable code isn't run
@@ -10,9 +10,9 @@ omit =
 
 [paths]
 source =
-    src/flake9
-    .tox/*/lib/python*/site-packages/flake9
-    .tox/pypy/site-packages/flake9
+    src/flake8
+    .tox/*/lib/python*/site-packages/flake8
+    .tox/pypy/site-packages/flake8
 
 [report]
 show_missing = True

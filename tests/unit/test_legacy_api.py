@@ -1,12 +1,12 @@
-"""Tests for Flake9's legacy API."""
+"""Tests for Flake8's legacy API."""
 import argparse
 
 import mock
 import pytest
 
-from flake9.api import legacy as api
-from flake9.formatting import base as formatter
-from flake9.options.config import ConfigFileFinder
+from flake8.api import legacy as api
+from flake8.formatting import base as formatter
+from flake8.options.config import ConfigFileFinder
 
 
 def test_get_style_guide():
@@ -20,12 +20,12 @@ def test_get_style_guide():
     )
     mockedapp = mock.Mock()
     mockedapp.parse_preliminary_options.return_value = (prelim_opts, [])
-    mockedapp.program = 'flake9'
-    with mock.patch('flake9.api.legacy.config.ConfigFileFinder') as mock_config_finder:  # noqa: E501
+    mockedapp.program = 'flake8'
+    with mock.patch('flake8.api.legacy.config.ConfigFileFinder') as mock_config_finder:  # noqa: E501
         config_finder = ConfigFileFinder(mockedapp.program)
         mock_config_finder.return_value = config_finder
 
-        with mock.patch('flake9.main.application.Application') as application:
+        with mock.patch('flake8.main.application.Application') as application:
             application.return_value = mockedapp
             style_guide = api.get_style_guide()
 

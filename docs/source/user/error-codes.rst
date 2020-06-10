@@ -4,11 +4,11 @@
  Error / Violation Codes
 =========================
 
-Flake9 and its plugins assign a code to each message that we refer to as an
+Flake8 and its plugins assign a code to each message that we refer to as an
 :term:`error code` (or :term:`violation`). Most plugins will list their error
 codes in their documentation or README.
 
-Flake9 installs ``pycodestyle``, ``pyflakes``, and ``mccabe`` by default and
+Flake8 installs ``pycodestyle``, ``pyflakes``, and ``mccabe`` by default and
 generates its own :term:`error code`\ s for ``pyflakes``:
 
 +------+---------------------------------------------------------------------+

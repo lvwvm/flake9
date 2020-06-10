@@ -1,10 +1,10 @@
-.. flake9 documentation master file, created by
+.. flake8 documentation master file, created by
    sphinx-quickstart on Tue Jan 19 07:14:10 2016.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
 ===============================================
- Flake9: Your Tool For Style Guide Enforcement
+ Flake8: Your Tool For Style Guide Enforcement
 ===============================================
 
 Quickstart
@@ -15,59 +15,59 @@ Quickstart
 Installation
 ------------
 
-To install |Flake9|, open an interactive shell and run:
+To install |Flake8|, open an interactive shell and run:
 
 .. code::
 
-    python<version> -m pip install flake9
+    python<version> -m pip install flake8
 
-If you want |Flake9| to be installed for your default Python installation, you
+If you want |Flake8| to be installed for your default Python installation, you
 can instead use:
 
 .. code::
 
-    python -m pip install flake9
+    python -m pip install flake8
 
 .. note::
 
-    It is **very** important to install |Flake9| on the *correct* version of
-    Python for your needs. If you want |Flake9| to properly parse new language
+    It is **very** important to install |Flake8| on the *correct* version of
+    Python for your needs. If you want |Flake8| to properly parse new language
     features in Python 3.5 (for example), you need it to be installed on 3.5
-    for |Flake9| to understand those features. In many ways, Flake9 is tied to
+    for |Flake8| to understand those features. In many ways, Flake8 is tied to
     the version of Python on which it runs.
 
-Using Flake9
+Using Flake8
 ------------
 
-To start using |Flake9|, open an interactive shell and run:
+To start using |Flake8|, open an interactive shell and run:
 
 .. code::
 
-    flake9 path/to/code/to/check.py
+    flake8 path/to/code/to/check.py
     # or
-    flake9 path/to/code/
+    flake8 path/to/code/
 
 .. note::
 
-    If you have installed |Flake9| on a particular version of Python (or on
+    If you have installed |Flake8| on a particular version of Python (or on
     several versions), it may be best to instead run ``python<version> -m
-    flake9``.
+    flake8``.
 
 If you only want to see the instances of a specific warning or error, you can
 *select* that error like so:
 
 .. code::
 
-    flake9 --select E123,W503 path/to/code/
+    flake8 --select E123,W503 path/to/code/
 
 Alternatively, if you want to *ignore* only one specific warning or error:
 
 .. code::
 
-    flake9 --ignore E24,W504 path/to/code/
+    flake8 --ignore E24,W504 path/to/code/
 
 Please read our user guide for more information about how to use and configure
-|Flake9|.
+|Flake8|.
 
 FAQ and Glossary
 ================
@@ -81,20 +81,20 @@ FAQ and Glossary
 User Guide
 ==========
 
-All users of |Flake9| should read this portion of the documentation. This
-provides examples and documentation around |Flake9|'s assortment of options
+All users of |Flake8| should read this portion of the documentation. This
+provides examples and documentation around |Flake8|'s assortment of options
 and how to specify them on the command-line or in configuration files.
 
 .. toctree::
     :maxdepth: 2
 
     user/index
-    Flake9 man page <manpage>
+    Flake8 man page <manpage>
 
 Plugin Developer Guide
 ======================
 
-If you're maintaining a plugin for |Flake9| or creating a new one, you should
+If you're maintaining a plugin for |Flake8| or creating a new one, you should
 read this section of the documentation. It explains how you can write your
 plugins and distribute them to others.
 
@@ -106,9 +106,9 @@ plugins and distribute them to others.
 Contributor Guide
 =================
 
-If you are reading |Flake9|'s source code for fun or looking to contribute,
+If you are reading |Flake8|'s source code for fun or looking to contribute,
 you should read this portion of the documentation. This is a mix of documenting
-the internal-only interfaces |Flake9| and documenting reasoning for Flake9's
+the internal-only interfaces |Flake8| and documenting reasoning for Flake8's
 design.
 
 .. toctree::

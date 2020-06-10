@@ -1,7 +1,7 @@
-diff --git a/flake9/utils.py b/flake9/utils.py
+diff --git a/flake8/utils.py b/flake8/utils.py
 index f6ce384..7cd12b0 100644
---- a/flake9/utils.py
-+++ b/flake9/utils.py
+--- a/flake8/utils.py
++++ b/flake8/utils.py
 @@ -75,8 +75,8 @@ def stdin_get_value():
      return cached_value.getvalue()
 

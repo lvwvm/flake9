@@ -2,15 +2,15 @@
 import mock
 import pytest
 
-import flake9
-from flake9 import checker
+import flake8
+from flake8 import checker
 
 
-@mock.patch('flake9.processor.FileProcessor')
+@mock.patch('flake8.processor.FileProcessor')
 def test_run_ast_checks_handles_SyntaxErrors(FileProcessor):  # noqa: N802,N803
     """Stress our SyntaxError handling.
 
-    Related to: https://gitlab.com/pycqa/flake9/issues/237
+    Related to: https://gitlab.com/pycqa/flake8/issues/237
     """
     processor = mock.Mock(lines=[])
     FileProcessor.return_value = processor
@@ -27,7 +27,7 @@ def test_run_ast_checks_handles_SyntaxErrors(FileProcessor):  # noqa: N802,N803
         )
 
 
-@mock.patch('flake9.checker.FileChecker._make_processor', return_value=None)
+@mock.patch('flake8.checker.FileChecker._make_processor', return_value=None)
 def test_repr(*args):
     """Verify we generate a correct repr."""
     file_checker = checker.FileChecker(
@@ -60,5 +60,5 @@ def test_raises_exception_on_failed_plugin(tmp_path, default_options):
     """Verify a failing plugin results in an plugin error"""
     fchecker = checker.FileChecker(
         str(foobar), checks=[], options=default_options)
-    with pytest.raises(flake9.exceptions.PluginExecutionFailed):
+    with pytest.raises(flake8.exceptions.PluginExecutionFailed):
         fchecker.run_check(plugin)

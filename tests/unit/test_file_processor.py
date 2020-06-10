@@ -5,7 +5,7 @@ import tokenize
 import mock
 import pytest
 
-from flake9 import processor
+from flake8 import processor
 
 
 def test_read_lines_splits_lines(default_options):
@@ -59,15 +59,15 @@ def test_strip_utf_bom(first_line, default_options):
 @pytest.mark.parametrize('lines, expected', [
     (['\xEF\xBB\xBF"""Module docstring."""\n'], False),
     ([u'\uFEFF"""Module docstring."""\n'], False),
-    (['#!/usr/bin/python', '# flake9 is great', 'a = 1'], False),
-    (['#!/usr/bin/python', '# flake9: noqa', 'a = 1'], True),
-    (['#!/usr/bin/python', '# flake9:noqa', 'a = 1'], True),
-    (['# flake9: noqa', '#!/usr/bin/python', 'a = 1'], True),
-    (['# flake9:noqa', '#!/usr/bin/python', 'a = 1'], True),
-    (['#!/usr/bin/python', 'a = 1', '# flake9: noqa'], True),
-    (['#!/usr/bin/python', 'a = 1', '# flake9:noqa'], True),
-    (['#!/usr/bin/python', 'a = 1  # flake9: noqa'], False),
-    (['#!/usr/bin/python', 'a = 1  # flake9:noqa'], False),
+    (['#!/usr/bin/python', '# flake8 is great', 'a = 1'], False),
+    (['#!/usr/bin/python', '# flake8: noqa', 'a = 1'], True),
+    (['#!/usr/bin/python', '# flake8:noqa', 'a = 1'], True),
+    (['# flake8: noqa', '#!/usr/bin/python', 'a = 1'], True),
+    (['# flake8:noqa', '#!/usr/bin/python', 'a = 1'], True),
+    (['#!/usr/bin/python', 'a = 1', '# flake8: noqa'], True),
+    (['#!/usr/bin/python', 'a = 1', '# flake8:noqa'], True),
+    (['#!/usr/bin/python', 'a = 1  # flake8: noqa'], False),
+    (['#!/usr/bin/python', 'a = 1  # flake8:noqa'], False),
 ])
 def test_should_ignore_file(lines, expected, default_options):
     """Verify that we ignore a file if told to."""
@@ -77,7 +77,7 @@ def test_should_ignore_file(lines, expected, default_options):
 
 def test_should_ignore_file_to_handle_disable_noqa(default_options):
     """Verify that we ignore a file if told to."""
-    lines = ['# flake9: noqa']
+    lines = ['# flake8: noqa']
     file_processor = processor.FileProcessor('-', default_options, lines)
     assert file_processor.should_ignore_file() is True
     default_options.disable_noqa = True
@@ -85,7 +85,7 @@ def test_should_ignore_file_to_handle_disable_noqa(default_options):
     assert file_processor.should_ignore_file() is False
 
 
-@mock.patch('flake9.utils.stdin_get_value')
+@mock.patch('flake8.utils.stdin_get_value')
 def test_read_lines_from_stdin(stdin_get_value, default_options):
     """Verify that we use our own utility function to retrieve stdin."""
     stdin_get_value.return_value = ''
@@ -93,7 +93,7 @@ def test_read_lines_from_stdin(stdin_get_value, default_options):
     stdin_get_value.assert_called_once_with()
 
 
-@mock.patch('flake9.utils.stdin_get_value')
+@mock.patch('flake8.utils.stdin_get_value')
 def test_stdin_filename_attribute(stdin_get_value, default_options):
     """Verify that we update the filename attribute."""
     stdin_get_value.return_value = ''
@@ -101,7 +101,7 @@ def test_stdin_filename_attribute(stdin_get_value, default_options):
     assert file_processor.filename == 'stdin'
 
 
-@mock.patch('flake9.utils.stdin_get_value')
+@mock.patch('flake8.utils.stdin_get_value')
 def test_read_lines_uses_display_name(stdin_get_value, default_options):
     """Verify that when processing stdin we use a display name if present."""
     default_options.stdin_display_name = 'display_name.py'
@@ -110,7 +110,7 @@ def test_read_lines_uses_display_name(stdin_get_value, default_options):
     assert file_processor.filename == 'display_name.py'
 
 
-@mock.patch('flake9.utils.stdin_get_value')
+@mock.patch('flake8.utils.stdin_get_value')
 def test_read_lines_ignores_empty_display_name(
         stdin_get_value, default_options,
 ):
@@ -354,7 +354,7 @@ def test_log_token(token, log_string):
     log = mock.Mock()
     processor.log_token(log, token)
     log.log.assert_called_once_with(
-        5,  # flake9._EXTRA_VERBOSE
+        5,  # flake8._EXTRA_VERBOSE
         log_string,
     )
 

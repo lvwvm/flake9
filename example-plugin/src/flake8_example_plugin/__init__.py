@@ -1,4 +1,4 @@
-"""Module for an example Flake9 plugin."""
+"""Module for an example Flake8 plugin."""
 
 from .on_by_default import ExampleOne
 from .off_by_default import ExampleTwo

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Packaging logic for Flake9."""
+"""Packaging logic for Flake8."""
 import os
 import sys
 

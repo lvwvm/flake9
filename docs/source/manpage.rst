@@ -1,5 +1,5 @@
 ========
- flake9
+ flake8
 ========
 
 SYNOPSIS
@@ -7,14 +7,14 @@ SYNOPSIS
 
 .. code::
 
-    flake9 [options] [<path> <path> ...]
+    flake8 [options] [<path> <path> ...]
 
-    flake9 --help
+    flake8 --help
 
 DESCRIPTION
 ===========
 
-``flake9`` is a command-line utility for enforcing style consistency across
+``flake8`` is a command-line utility for enforcing style consistency across
 Python projects. By default it includes lint checks provided by the PyFlakes
 project, PEP-0008 inspired style checks provided by the PyCodeStyle project,
 and McCabe complexity checking provided by the McCabe project. It will also
@@ -26,14 +26,14 @@ OPTIONS
 It is important to note that third-party extensions may add options which are
 not represented here. To see all options available in your installation, run::
 
-    flake9 --help
+    flake8 --help
 
-All options available as of Flake9 3.1.0::
+All options available as of Flake8 3.1.0::
 
     --version             show program's version number and exit
     -h, --help            show this help message and exit
     -v, --verbose         Print more information about what is happening in
-                          flake9. This option is repeatable and will increase
+                          flake8. This option is repeatable and will increase
                           verbosity each time it is repeated.
     -q, --quiet           Report only file names, or nothing. This option is
                           repeatable.
@@ -50,7 +50,7 @@ All options available as of Flake9 3.1.0::
     --stdin-display-name=STDIN_DISPLAY_NAME
                           The name used when reporting errors from code passed
                           via stdin. This is useful for editors piping the file
-                          contents to flake9. (Default: stdin)
+                          contents to flake8. (Default: stdin)
     --format=format       Format errors according to the chosen formatter.
     --hang-closing        Hang closing bracket instead of matching indentation
                           of opening bracket's line.
@@ -82,14 +82,14 @@ All options available as of Flake9 3.1.0::
     --tee                 Write to stdout and output-file.
     --append-config=APPEND_CONFIG
                           Provide extra config files to parse in addition to the
-                          files found by Flake9 by default. These files are the
+                          files found by Flake8 by default. These files are the
                           last ones read and so they take the highest precedence
                           when multiple files provide the same option.
     --config=CONFIG       Path to the config file that will be the authoritative
-                          config source. This will cause Flake9 to ignore all
+                          config source. This will cause Flake8 to ignore all
                           other configuration files.
     --isolated            Ignore all configuration files.
-    --benchmark           Print benchmark information about this run of Flake9
+    --benchmark           Print benchmark information about this run of Flake8
     --bug-report          Print information necessary when preparing a bug
                           report
     --builtins=BUILTINS   define more built-ins, comma separated
@@ -104,39 +104,39 @@ All options available as of Flake9 3.1.0::
 EXAMPLES
 ========
 
-Simply running flake9 against the current directory::
+Simply running flake8 against the current directory::
 
-    flake9
-    flake9 .
+    flake8
+    flake8 .
 
-Running flake9 against a specific path::
+Running flake8 against a specific path::
 
-    flake9 path/to/file.py
+    flake8 path/to/file.py
 
-Ignoring violations from flake9::
+Ignoring violations from flake8::
 
-    flake9 --ignore E101
-    flake9 --ignore E1,E202
+    flake8 --ignore E101
+    flake8 --ignore E1,E202
 
 Only report certain violations::
 
-    flake9 --select E101
-    flake9 --select E2,E742
+    flake8 --select E101
+    flake8 --select E2,E742
 
 Analyzing only a diff::
 
-    git diff -U0 | flake9 --diff -
+    git diff -U0 | flake8 --diff -
 
 Generate information for a bug report::
 
-    flake9 --bug-report
+    flake8 --bug-report
 
 SEE ALSO
 ========
 
-Flake9 documentation: http://flake9.pycqa.org
+Flake8 documentation: http://flake8.pycqa.org
 
-Flake9 Options and Examples: http://flake9.pycqa.org/en/latest/user/options.html
+Flake8 Options and Examples: http://flake8.pycqa.org/en/latest/user/options.html
 
 PyCodeStyle documentation: http://pycodestyle.pycqa.org
 
@@ -147,4 +147,4 @@ McCabe: https://github.com/pycqa/mccabe
 BUGS
 ====
 
-Please report all bugs to https://gitlab.com/pycqa/flake9
+Please report all bugs to https://gitlab.com/pycqa/flake8

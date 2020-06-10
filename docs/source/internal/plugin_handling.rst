@@ -4,26 +4,26 @@ Plugin Handling
 Plugin Management
 -----------------
 
-|Flake9| 3.0 added support for other plugins besides those which define
+|Flake8| 3.0 added support for other plugins besides those which define
 new checks. It now supports:
 
 - extra checks
 
 - alternative report formatters
 
-To facilitate this, |Flake9| needed a more mature way of managing plugins.
+To facilitate this, |Flake8| needed a more mature way of managing plugins.
 Thus, we developed the |PluginManager| which accepts a namespace and will load
 the plugins for that namespace. A |PluginManager| creates and manages many
 |Plugin| instances.
 
 A |Plugin| lazily loads the underlying entry-point provided by setuptools.
 The entry-point will be loaded either by calling
-:meth:`~flake9.plugins.manager.Plugin.load_plugin` or accessing the ``plugin``
+:meth:`~flake8.plugins.manager.Plugin.load_plugin` or accessing the ``plugin``
 attribute. We also use this abstraction to retrieve options that the plugin
 wishes to register and parse.
 
 The only public method the |PluginManager| provides is
-:meth:`~flake9.plugins.manager.PluginManager.map`. This will accept a function
+:meth:`~flake8.plugins.manager.PluginManager.map`. This will accept a function
 (or other callable) and call it with each plugin as the first parameter.
 
 We build atop the |PluginManager| with the |PTM|. It is expected that users of
@@ -31,16 +31,16 @@ the |PTM| will subclass it and specify the ``namespace``, e.g.,
 
 .. code-block:: python
 
-    class ExamplePluginType(flake9.plugin.manager.PluginTypeManager):
+    class ExamplePluginType(flake8.plugin.manager.PluginTypeManager):
         namespace = 'example-plugins'
 
 This provides a few extra methods via the |PluginManager|'s ``map`` method.
 
 Finally, we create two classes of plugins:
 
-- :class:`~flake9.plugins.manager.Checkers`
+- :class:`~flake8.plugins.manager.Checkers`
 
-- :class:`~flake9.plugins.manager.ReportFormatters`
+- :class:`~flake8.plugins.manager.ReportFormatters`
 
 These are used to interact with each of the types of plugins individually.
 
@@ -52,11 +52,11 @@ These are used to interact with each of the types of plugins individually.
 Default Plugins
 ---------------
 
-Finally, |Flake9| has always provided its own plugin shim for Pyflakes. As
+Finally, |Flake8| has always provided its own plugin shim for Pyflakes. As
 part of that we carry our own shim in-tree and now store that in
-:mod:`flake9.plugins.pyflakes`.
+:mod:`flake8.plugins.pyflakes`.
 
-|Flake9| also registers plugins for pep8. Each check in pep8 requires
+|Flake8| also registers plugins for pep8. Each check in pep8 requires
 different parameters and it cannot easily be shimmed together like Pyflakes
 was. As such, plugins have a concept of a "group". If you look at our
 :file:`setup.py` you will see that we register pep8 checks roughly like so:
@@ -74,22 +74,22 @@ to avoid confusing users.
 API Documentation
 -----------------
 
-.. autoclass:: flake9.plugins.manager.PluginManager
+.. autoclass:: flake8.plugins.manager.PluginManager
     :members:
     :special-members: __init__
 
-.. autoclass:: flake9.plugins.manager.Plugin
+.. autoclass:: flake8.plugins.manager.Plugin
     :members:
     :special-members: __init__
 
-.. autoclass:: flake9.plugins.manager.PluginTypeManager
+.. autoclass:: flake8.plugins.manager.PluginTypeManager
     :members:
 
-.. autoclass:: flake9.plugins.manager.Checkers
+.. autoclass:: flake8.plugins.manager.Checkers
     :members:
 
-.. autoclass:: flake9.plugins.manager.ReportFormatters
+.. autoclass:: flake8.plugins.manager.ReportFormatters
 
-.. |PluginManager| replace:: :class:`~flake9.plugins.manager.PluginManager`
-.. |Plugin| replace:: :class:`~flake9.plugins.manager.Plugin`
-.. |PTM| replace:: :class:`~flake9.plugins.manager.PluginTypeManager`
+.. |PluginManager| replace:: :class:`~flake8.plugins.manager.PluginManager`
+.. |Plugin| replace:: :class:`~flake8.plugins.manager.Plugin`
+.. |PTM| replace:: :class:`~flake8.plugins.manager.PluginTypeManager`
