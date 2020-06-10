@@ -2,7 +2,11 @@
  Flake9
 ========
 
-Flake9 is a fork of Flake8 that supports reading configuration from a ``pyproject.toml`` file.
+Flake9 is a fork of Flake8 that supports reading configuration from a
+``pyproject.toml`` file, because the authors of Flake8 are stubborn
+retards.
+
+In addition, because it's 2020, Python 2.7 support has been dropped.
 
 ========================
  Original Flake8 README
