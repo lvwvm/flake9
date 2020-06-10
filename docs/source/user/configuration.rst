@@ -232,7 +232,11 @@ these situations.
 ``pyproject.toml``
 ------------------
 
-|Flake8| supports reading configuration from a ``pyproject.toml`` file per `PEP 518 <https://www.python.org/peps/pep-0518/>`_. If the ``toml`` module (`<https://pypi.org/project/toml>`_) is installed, it will be used to load configuration from a ``tool.flake8`` section in a file called ``pyproject.toml`` in `TOML <https://github.com/toml-lang/toml>`_ format.
+|Flake8| supports reading configuration from a ``pyproject.toml`` file per
+`PEP 518 <https://www.python.org/peps/pep-0518/>`_. If the ``toml`` module
+(`<https://pypi.org/project/toml>`_) is installed, it will be used to load
+configuration from a ``tool.flake8`` section in a file called
+``pyproject.toml`` in `TOML <https://github.com/toml-lang/toml>`_ format.
 
 For example:
 
@@ -243,7 +247,8 @@ For example:
 
 .. |toml| replace:: ``toml``
 
-|Flake8| will look for the ``pyproject.toml`` file recursively up from the current directory by up to 25 directories.
+|Flake8| will look for the ``pyproject.toml`` file recursively up from the
+current directory by up to 25 directories.
 
 This is the only new feature added by |Flake8| compared to |Flake8|.
 
