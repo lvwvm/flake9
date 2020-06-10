@@ -3,4 +3,4 @@
 
 - Flush standard out when using multiprocessing
 
-- Make the check for "# flake9: noqa" more strict
+- Make the check for "# flake8: noqa" more strict

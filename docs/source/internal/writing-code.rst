@@ -1,17 +1,17 @@
 .. _writing-code:
 
 =========================
- Writing Code for Flake9
+ Writing Code for Flake8
 =========================
 
-The maintainers of |Flake9| unsurprisingly have some opinions about the style
+The maintainers of |Flake8| unsurprisingly have some opinions about the style
 of code maintained in the project.
 
-At the time of this writing, |Flake9| enables all of PyCodeStyle's checks, all
+At the time of this writing, |Flake8| enables all of PyCodeStyle's checks, all
 of PyFlakes' checks, and sets a maximum complexity value (for McCabe) of 10.
 On top of that, we enforce PEP-0257 style doc-strings via PyDocStyle
 (disabling only D203) and Google's import order style using
-flake9-import-order.
+flake8-import-order.
 
 The last two are a little unusual, so we provide examples below.
 
@@ -19,25 +19,25 @@ The last two are a little unusual, so we provide examples below.
 PEP-0257 style doc-strings
 ==========================
 
-|Flake9| attempts to document both internal interfaces as well as our API and
+|Flake8| attempts to document both internal interfaces as well as our API and
 doc-strings provide a very convenient way to do so. Even if a function, class,
 or method isn't included specifically in our documentation having a doc-string
-is still preferred. Further, |Flake9| has some style preferences that are not
+is still preferred. Further, |Flake8| has some style preferences that are not
 checked by PyDocStyle.
 
 For example, while most people will never read the doc-string for
-:func:`flake9.main.git.hook` that doc-string still provides value to the
+:func:`flake8.main.git.hook` that doc-string still provides value to the
 maintainers and future collaborators. They (very explicitly) describe the
 purpose of the function, a little of what it does, and what parameters it
 accepts as well as what it returns.
 
 .. code-block:: python
 
-    # src/flake9/main/git.py
+    # src/flake8/main/git.py
     def hook(lazy=False, strict=False):
-        """Execute Flake9 on the files in git's index.
+        """Execute Flake8 on the files in git's index.
 
-        Determine which files are about to be committed and run Flake9 over them
+        Determine which files are about to be committed and run Flake8 over them
         to check for violations.
 
         :param bool lazy:
@@ -45,7 +45,7 @@ accepts as well as what it returns.
             if you frequently use ``git commit -a`` for example. This defaults to
             False since it will otherwise include files not in the index.
         :param bool strict:
-            If True, return the total number of errors/violations found by Flake9.
+            If True, return the total number of errors/violations found by Flake8.
             This will cause the hook to fail.
         :returns:
             Total number of errors found during the run.
@@ -53,7 +53,7 @@ accepts as well as what it returns.
             int
         """
         # NOTE(sigmavirus24): Delay import of application until we need it.
-        from flake9.main import application
+        from flake8.main import application
         app = application.Application()
         with make_temporary_directory() as tempdir:
             filepaths = list(copy_indexed_files_to(tempdir, lazy))
@@ -82,16 +82,16 @@ places where the name is a little longer, e.g.,
 
 .. code-block:: python
 
-    # src/flake9/formatting/base.py
+    # src/flake8/formatting/base.py
     def format(self, error):
-        """Format an error reported by Flake9.
+        """Format an error reported by Flake8.
 
         This method **must** be implemented by subclasses.
 
         :param error:
-            This will be an instance of :class:`~flake9.style_guide.Error`.
+            This will be an instance of :class:`~flake8.style_guide.Error`.
         :type error:
-            flake9.style_guide.Error
+            flake8.style_guide.Error
         :returns:
             The formatted error string.
         :rtype:
@@ -101,13 +101,13 @@ places where the name is a little longer, e.g.,
 Here we've separated ``:param error:`` and ``:type error:``.
 
 Following the above examples and guidelines should help you write doc-strings
-that are stylistically correct for |Flake9|.
+that are stylistically correct for |Flake8|.
 
 
 Imports
 =======
 
-|Flake9| follows the import guidelines that Google published in their Python
+|Flake8| follows the import guidelines that Google published in their Python
 Style Guide. In short this includes:
 
 - Only importing modules
@@ -132,8 +132,8 @@ In practice this would look something like:
 
     import requests
 
-    from flake9 import exceptions
-    from flake9.formatting import base
+    from flake8 import exceptions
+    from flake8.formatting import base
 
 As a result, of the above, we do not:
 
@@ -148,7 +148,7 @@ As a result, of the above, we do not:
 Other Stylistic Preferences
 ===========================
 
-Finally, |Flake9| has a few other stylistic preferences that it does not
+Finally, |Flake8| has a few other stylistic preferences that it does not
 presently enforce automatically.
 
 Multi-line Function/Method Calls
@@ -159,16 +159,16 @@ across multiple lines, insert a new-line after the opening parenthesis, e.g.,
 
 .. code-block:: python
 
-    # src/flake9/main/options.py
+    # src/flake8/main/options.py
     add_option(
         '-v', '--verbose', default=0, action='count',
         parse_from_config=True,
-        help='Print more information about what is happening in flake9.'
+        help='Print more information about what is happening in flake8.'
              ' This option is repeatable and will increase verbosity each '
              'time it is repeated.',
     )
 
-    # src/flake9/formatting/base.py
+    # src/flake8/formatting/base.py
     def show_statistics(self, statistics):
         """Format and print the statistics."""
         for error_code in statistics.error_codes():
@@ -191,7 +191,7 @@ reasonable and understandable to group a few together on one line.
 Comments
 --------
 
-If you're adding an important comment, be sure to sign it. In |Flake9| we
+If you're adding an important comment, be sure to sign it. In |Flake8| we
 generally sign comments by preceding them with ``NOTE(<name>)``. For example,
 
 .. code-block:: python
@@ -215,6 +215,6 @@ comments that way.
 Verbs Belong in Function Names
 ------------------------------
 
-|Flake9| prefers that functions have verbs in them. If you're writing a
+|Flake8| prefers that functions have verbs in them. If you're writing a
 function that returns a generator of files then ``generate_files`` will always
 be preferable to ``make_files`` or ``files``.

@@ -12,7 +12,7 @@
   - Using windows
 
 - Fix --install-hook when there are no config files present for pep8 or
-  flake9.
+  flake8.
 
 - Fix how the setuptools command parses excludes in config files
 

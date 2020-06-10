@@ -1,5 +1,5 @@
 """Integration tests for the legacy api."""
-from flake9.api import legacy
+from flake8.api import legacy
 
 
 def test_legacy_api(tmpdir):

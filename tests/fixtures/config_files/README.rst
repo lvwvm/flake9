@@ -28,12 +28,12 @@ Purposes of existing fixtures
 
 ``tests/fixtures/config_files/local-plugin.ini``
 
-    This is for testing configuring a plugin via flake9 config file instead of
+    This is for testing configuring a plugin via flake8 config file instead of
     setuptools entry-point.
 
-``tests/fixtures/config_files/no-flake9-section.ini``
+``tests/fixtures/config_files/no-flake8-section.ini``
 
-    This should be used when parsing an ini file without a ``[flake9]``
+    This should be used when parsing an ini file without a ``[flake8]``
     section.
 
 ``tests/fixtures/config_files/user-config.ini``

@@ -1,8 +1,8 @@
-"""Tests for the flake9.style_guide.Violation class."""
+"""Tests for the flake8.style_guide.Violation class."""
 import mock
 import pytest
 
-from flake9 import style_guide
+from flake8 import style_guide
 
 
 @pytest.mark.parametrize('error_code,physical_line,expected_result', [

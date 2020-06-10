@@ -1,8 +1,8 @@
 ========================
- Contributing to Flake9
+ Contributing to Flake8
 ========================
 
-There are many ways to contribute to |Flake9|, and we encourage them all:
+There are many ways to contribute to |Flake8|, and we encourage them all:
 
 - contributing bug reports and feature requests
 
@@ -18,7 +18,7 @@ reassure you that any help you can provide *is* valuable.
 Code of Conduct
 ===============
 
-|Flake9| adheres to the `Python Code Quality Authority's Code of Conduct`_.
+|Flake8| adheres to the `Python Code Quality Authority's Code of Conduct`_.
 Any violations of the Code of Conduct should be reported to Ian Stapleton
 Cordasco (graffatcolmingov [at] gmail [dot] com).
 
@@ -26,7 +26,7 @@ Cordasco (graffatcolmingov [at] gmail [dot] com).
 Setting Up A Development Environment
 ====================================
 
-To contribute to |Flake9|'s development, you simply need:
+To contribute to |Flake8|'s development, you simply need:
 
 - Python (one of the versions we support)
 
@@ -50,11 +50,11 @@ To contribute to |Flake9|'s development, you simply need:
 Filing a Bug
 ============
 
-When filing a bug against |Flake9|, please fill out the issue template as it
+When filing a bug against |Flake8|, please fill out the issue template as it
 is provided to you by `GitLab`_. If your bug is in reference to one of the
-checks that |Flake9| reports by default, please do not report them to |Flake9|
-unless |Flake9| is doing something to prevent the check from running or you
-have some reason to believe |Flake9| is inhibiting the effectiveness of the
+checks that |Flake8| reports by default, please do not report them to |Flake8|
+unless |Flake8| is doing something to prevent the check from running or you
+have some reason to believe |Flake8| is inhibiting the effectiveness of the
 check.
 
 **Please search for closed and open bug reports before opening new ones.**
@@ -72,7 +72,7 @@ All bug reports about checks should go to their respective projects:
 Requesting a New Feature
 ========================
 
-When requesting a new feature in |Flake9|, please fill out the issue template.
+When requesting a new feature in |Flake8|, please fill out the issue template.
 Please also note if there are any existing alternatives to your new feature
 either via plugins, or combining command-line options. Please provide example
 use cases. For example, do not ask for a feature like this:
@@ -81,8 +81,8 @@ use cases. For example, do not ask for a feature like this:
 
 Instead ask:
 
-    I need |Flake9| to frobulate these files because my team expects them to
-    frobulated but |Flake9| currently does not frobulate them. We tried using
+    I need |Flake8| to frobulate these files because my team expects them to
+    frobulated but |Flake8| currently does not frobulate them. We tried using
     ``--filename`` but we could not create a pattern that worked.
 
 The more you explain about *why* you need a feature, the more likely we are to
@@ -92,13 +92,13 @@ understand your needs and help you to the best of our ability.
 Contributing Documentation
 ==========================
 
-To contribute to |Flake9|'s documentation, you might want to first read a
-little about reStructuredText or Sphinx. |Flake9| has a :ref:`guide of best
+To contribute to |Flake8|'s documentation, you might want to first read a
+little about reStructuredText or Sphinx. |Flake8| has a :ref:`guide of best
 practices <docs-style>` when contributing to our documentation. For the most
 part, you should be fine following the structure and style of the rest of
-|Flake9|'s documentation.
+|Flake8|'s documentation.
 
-All of |Flake9|'s documentation is written in reStructuredText and rendered by
+All of |Flake8|'s documentation is written in reStructuredText and rendered by
 Sphinx. The source (reStructuredText) lives in ``docs/source/``. To build
 the documentation the way our Continuous Integration does, run:
 
@@ -131,7 +131,7 @@ documentation generation and refresh the documentation you're working on.
 Contributing Code
 =================
 
-|Flake9| development happens on `GitLab`_. Code contributions should be
+|Flake8| development happens on `GitLab`_. Code contributions should be
 submitted there.
 
 Merge requests should:
@@ -185,12 +185,12 @@ When reviewing other people's merge requests and issues, please be
 else. We strive for professional code reviews that do not insult the
 contributor's intelligence or impugn their character. The code review
 should be focused on the code, its effectiveness, and whether it is
-appropriate for |Flake9|.
+appropriate for |Flake8|.
 
 If you have the ability to edit an issue or merge request's labels, please do
 so to make search and prioritization easier.
 
-|Flake9| uses milestones with both issues and merge requests. This provides
+|Flake8| uses milestones with both issues and merge requests. This provides
 direction for other contributors about when an issue or merge request will be
 delivered.
 
@@ -203,7 +203,7 @@ delivered.
     https://tox.readthedocs.io/
 
 .. _GitLab:
-    https://gitlab.com/pycqa/flake9
+    https://gitlab.com/pycqa/flake8
 
 .. _pycodestyle:
     https://github.com/pycqa/pycodestyle

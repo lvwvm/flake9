@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# flake9 documentation build configuration file, created by
+# flake8 documentation build configuration file, created by
 # sphinx-quickstart on Tue Jan 19 07:14:10 2016.
 #
 # This file is execfile()d with the current directory set to its
@@ -53,22 +53,22 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'flake9'
+project = u'flake8'
 copyright = u'2016, Ian Stapleton Cordasco'
 author = u'Ian Stapleton Cordasco'
 
-import flake9
+import flake8
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
 # The short X.Y version.
-version = flake9.__version__
+version = flake8.__version__
 # The full version, including alpha/beta/rc tags.
-release = flake9.__version__
+release = flake8.__version__
 
 rst_epilog = """
-.. |Flake9| replace:: :program:`Flake9`
+.. |Flake8| replace:: :program:`Flake8`
 .. |Flake8| replace:: :program:`Flake8`
 """
 
@@ -213,7 +213,7 @@ html_theme = 'sphinx_rtd_theme'
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'flake9doc'
+htmlhelp_basename = 'flake8doc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -235,7 +235,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'flake9.tex', u'flake9 Documentation',
+    (master_doc, 'flake8.tex', u'flake8 Documentation',
      u'Ian Stapleton Cordasco', 'manual'),
 ]
 
@@ -265,7 +265,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('manpage', 'flake9', u'Flake9 Command Line Documentation',
+    ('manpage', 'flake8', u'Flake8 Command Line Documentation',
      [author], 1)
 ]
 
@@ -279,8 +279,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    ('index', 'Flake9', u'Flake9 Documentation', u'Tarek Ziade',
-     'Flake9', 'Code checking using pycodestyle, pyflakes and mccabe',
+    ('index', 'Flake8', u'Flake8 Documentation', u'Tarek Ziade',
+     'Flake8', 'Code checking using pycodestyle, pyflakes and mccabe',
      'Miscellaneous'),
 ]
 

@@ -1,10 +1,10 @@
-"""Unit tests for flake9.options.manager.Option."""
+"""Unit tests for flake8.options.manager.Option."""
 import functools
 
 import mock
 import pytest
 
-from flake9.options import manager
+from flake8.options import manager
 
 
 def test_to_argparse():
@@ -30,7 +30,7 @@ def test_to_optparse():
     with pytest.raises(AttributeError) as excinfo:
         manager.Option('--foo').to_optparse
     msg, = excinfo.value.args
-    assert msg == 'to_optparse: flake9 now uses argparse'
+    assert msg == 'to_optparse: flake8 now uses argparse'
 
 
 def test_to_argparse_creates_an_option_as_we_expect():

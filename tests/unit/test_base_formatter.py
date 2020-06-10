@@ -4,8 +4,8 @@ import argparse
 import mock
 import pytest
 
-from flake9 import style_guide
-from flake9.formatting import base
+from flake8 import style_guide
+from flake8.formatting import base
 
 
 def options(**kwargs):
@@ -20,7 +20,7 @@ def test_start(filename):
     """Verify we open a new file in the start method."""
     mock_open = mock.mock_open()
     formatter = base.BaseFormatter(options(output_file=filename))
-    with mock.patch('flake9.formatting.base.open', mock_open):
+    with mock.patch('flake8.formatting.base.open', mock_open):
         formatter.start()
 
     if filename is None:
@@ -100,7 +100,7 @@ def test_write_uses_an_output_file(tee):
     formatter = base.BaseFormatter(options(tee=tee))
     formatter.output_fd = filemock
 
-    with mock.patch('flake9.formatting.base.print') as print_func:
+    with mock.patch('flake8.formatting.base.print') as print_func:
         formatter.write(line, source)
         if tee:
             assert print_func.called
@@ -119,7 +119,7 @@ def test_write_uses_an_output_file(tee):
     ]
 
 
-@mock.patch('flake9.formatting.base.print')
+@mock.patch('flake8.formatting.base.print')
 def test_write_uses_print(print_function):
     """Verify that we use the print function without an output file."""
     line = 'Something to write'

@@ -16,12 +16,12 @@ You can view the `3.2.1 milestone`_ on GitLab for more details.
 
 .. links
 .. _3.2.1 milestone:
-    https://gitlab.com/pycqa/flake9/milestones/15
+    https://gitlab.com/pycqa/flake8/milestones/15
 .. _GitLab#237:
-    https://gitlab.com/pycqa/flake9/issues/237
+    https://gitlab.com/pycqa/flake8/issues/237
 .. _GitLab#257:
-    https://gitlab.com/pycqa/flake9/issues/257
+    https://gitlab.com/pycqa/flake8/issues/257
 .. _GitLab#259:
-    https://gitlab.com/pycqa/flake9/issues/259
+    https://gitlab.com/pycqa/flake8/issues/259
 .. _GitLab#266:
-    https://gitlab.com/pycqa/flake9/issues/266
+    https://gitlab.com/pycqa/flake8/issues/266

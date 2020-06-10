@@ -29,18 +29,18 @@ Bugs Fixed
 
 .. all links
 .. _3.5.0 milestone:
-    https://gitlab.com/pycqa/flake9/milestones/20
+    https://gitlab.com/pycqa/flake8/milestones/20
 
 .. issue links
 .. _GitLab#335:
-    https://gitlab.com/pycqa/flake9/issues/335
+    https://gitlab.com/pycqa/flake8/issues/335
 .. _GitLab#357:
-    https://gitlab.com/pycqa/flake9/issues/357
+    https://gitlab.com/pycqa/flake8/issues/357
 .. _GitLab#358:
-    https://gitlab.com/pycqa/flake9/issues/358
+    https://gitlab.com/pycqa/flake8/issues/358
 .. _GitLab#359:
-    https://gitlab.com/pycqa/flake9/issues/359
+    https://gitlab.com/pycqa/flake8/issues/359
 .. _GitLab#361:
-    https://gitlab.com/pycqa/flake9/issues/361
+    https://gitlab.com/pycqa/flake8/issues/361
 
 .. merge request links

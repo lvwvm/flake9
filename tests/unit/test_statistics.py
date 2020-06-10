@@ -1,8 +1,8 @@
-"""Tests for the statistics module in Flake9."""
+"""Tests for the statistics module in Flake8."""
 import pytest
 
-from flake9 import statistics as stats
-from flake9 import style_guide
+from flake8 import statistics as stats
+from flake8 import style_guide
 
 DEFAULT_ERROR_CODE = 'E100'
 DEFAULT_FILENAME = 'file.py'

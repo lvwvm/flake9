@@ -5,5 +5,5 @@
 - make sure mccabe catches the syntax errors as warnings
 - pep8 upgrade
 - added max_line_length default value
-- added Flake9Command and entry points if setuptools is around
+- added Flake8Command and entry points if setuptools is around
 - using the setuptools console wrapper when available

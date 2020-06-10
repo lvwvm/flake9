@@ -7,7 +7,7 @@
 - Raise exception when entry_point in plugin not callable.
   This raises an informative error when a plugin fails to load because its
   entry_point is not callable, which can happen with a plugin which is buggy or
-  not updated for the current version of flake9. This is nicer than raising a
+  not updated for the current version of flake8. This is nicer than raising a
   `PicklingError` about failing to pickle a module (See also `GitLab#164`_)
 
 - Fix ``# noqa`` comments followed by a ``:`` and explanation broken by
@@ -29,16 +29,16 @@
 
 .. links
 .. _GitLab#164:
-    https://gitlab.com/pycqa/flake9/issues/164
+    https://gitlab.com/pycqa/flake8/issues/164
 .. _GitLab#178:
-    https://gitlab.com/pycqa/flake9/issues/178
+    https://gitlab.com/pycqa/flake8/issues/178
 .. _GitLab#193:
-    https://gitlab.com/pycqa/flake9/issues/193
+    https://gitlab.com/pycqa/flake8/issues/193
 .. _GitLab#194:
-    https://gitlab.com/pycqa/flake9/issues/193
+    https://gitlab.com/pycqa/flake8/issues/193
 .. _GitLab#195:
-    https://gitlab.com/pycqa/flake9/issues/195
+    https://gitlab.com/pycqa/flake8/issues/195
 .. _GitLab#200:
-    https://gitlab.com/pycqa/flake9/issues/200
+    https://gitlab.com/pycqa/flake8/issues/200
 .. _this Python bug report:
     https://bugs.python.org/issue27649

@@ -3,17 +3,17 @@ import ast
 
 import pyflakes
 
-from flake9.plugins import pyflakes as pyflakes_shim
+from flake8.plugins import pyflakes as pyflakes_shim
 
 
-def test_all_pyflakes_messages_have_flake9_codes_assigned():
+def test_all_pyflakes_messages_have_flake8_codes_assigned():
     """Verify all PyFlakes messages have error codes assigned."""
     messages = {
         name
         for name, obj in vars(pyflakes.messages).items()
         if name[0].isupper() and obj.message
     }
-    assert messages == set(pyflakes_shim.FLAKE9_PYFLAKES_CODES)
+    assert messages == set(pyflakes_shim.FLAKE8_PYFLAKES_CODES)
 
 
 def test_undefined_local_code():

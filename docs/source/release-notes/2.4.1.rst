@@ -8,5 +8,5 @@
 
 - **Improvement** Blacklist versions of pep8 we know are broken
 
-.. _GitLab#39: https://gitlab.com/pycqa/flake9/issues/39
-.. _GitLab!23: https://gitlab.com/pycqa/flake9/merge_requests/23
+.. _GitLab#39: https://gitlab.com/pycqa/flake8/issues/39
+.. _GitLab!23: https://gitlab.com/pycqa/flake8/merge_requests/23

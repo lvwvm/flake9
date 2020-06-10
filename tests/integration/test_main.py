@@ -1,12 +1,12 @@
-"""Integration tests for the main entrypoint of flake9."""
+"""Integration tests for the main entrypoint of flake8."""
 import json
 import os
 
 import mock
 import pytest
 
-from flake9 import utils
-from flake9.main import cli
+from flake8 import utils
+from flake8.main import cli
 
 
 def _call_main(argv, retv=0):
@@ -16,7 +16,7 @@ def _call_main(argv, retv=0):
 
 
 def test_diff_option(tmpdir, capsys):
-    """Ensure that `flake9 --diff` works."""
+    """Ensure that `flake8 --diff` works."""
     t_py_contents = '''\
 import os
 import sys  # unused but not part of diff
@@ -94,7 +94,7 @@ if True:
 
 
 def test_statistics_option(tmpdir, capsys):
-    """Ensure that `flake9 --statistics` works."""
+    """Ensure that `flake8 --statistics` works."""
     with tmpdir.as_cwd():
         tmpdir.join('t.py').write('import os\nimport sys\n')
         _call_main(['--statistics', 't.py'], retv=1)
@@ -134,7 +134,7 @@ t.py:1:1: F401 'os' imported but unused
 
 
 def test_extend_exclude(tmpdir, capsys):
-    """Ensure that `flake9 --extend-exclude` works."""
+    """Ensure that `flake8 --extend-exclude` works."""
     for d in ['project', 'vendor', 'legacy', '.git', '.tox', '.hg']:
         tmpdir.mkdir(d).join('t.py').write('import os\nimport sys\n')
 
@@ -153,7 +153,7 @@ def test_extend_exclude(tmpdir, capsys):
 def test_malformed_per_file_ignores_error(tmpdir, capsys):
     """Test the error message for malformed `per-file-ignores`."""
     setup_cfg = '''\
-[flake9]
+[flake8]
 per-file-ignores =
     incorrect/*
     values/*
@@ -165,7 +165,7 @@ per-file-ignores =
 
     out, err = capsys.readouterr()
     assert out == '''\
-There was a critical error during execution of Flake9:
+There was a critical error during execution of Flake8:
 Expected `per-file-ignores` to be a mapping from file exclude patterns to ignore codes.
 
 Configured `per-file-ignores` setting:
@@ -176,7 +176,7 @@ Configured `per-file-ignores` setting:
 
 
 def test_tokenization_error_but_not_syntax_error(tmpdir, capsys):
-    """Test that flake9 does not crash on tokenization errors."""
+    """Test that flake8 does not crash on tokenization errors."""
     with tmpdir.as_cwd():
         # this is a crash in the tokenizer, but not in the ast
         tmpdir.join('t.py').write("b'foo' \\\n")
@@ -207,7 +207,7 @@ def test_bug_report_successful(capsys):
 
 
 def test_specific_noqa_does_not_clobber_pycodestyle_noqa(tmpdir, capsys):
-    """See https://gitlab.com/pycqa/flake9/issues/552."""
+    """See https://gitlab.com/pycqa/flake8/issues/552."""
     with tmpdir.as_cwd():
         tmpdir.join('t.py').write("test = ('ABC' == None)  # noqa: E501\n")
         _call_main(['t.py'], retv=1)
@@ -219,7 +219,7 @@ t.py:1:15: E711 comparison to None should be 'if cond is None:'
 
 
 def test_specific_noqa_on_line_with_continuation(tmpdir, capsys):
-    """See https://gitlab.com/pycqa/flake9/issues/375."""
+    """See https://gitlab.com/pycqa/flake8/issues/375."""
     t_py_src = '''\
 from os \\
     import path  # noqa: F401
@@ -270,19 +270,19 @@ t.py:1:10: W292 no newline at end of file
 
 def test_obtaining_args_from_sys_argv_when_not_explicity_provided(capsys):
     """Test that arguments are obtained from 'sys.argv'."""
-    with mock.patch('sys.argv', ['flake9', '--help']):
+    with mock.patch('sys.argv', ['flake8', '--help']):
         _call_main(None)
 
     out, err = capsys.readouterr()
-    assert out.startswith('usage: flake9 [options] file file ...\n')
+    assert out.startswith('usage: flake8 [options] file file ...\n')
     assert err == ''
 
 
 def test_cli_config_option_respected(tmp_path):
     """Test --config is used."""
-    config = tmp_path / "flake9.ini"
+    config = tmp_path / "flake8.ini"
     config.write_text(u"""\
-[flake9]
+[flake8]
 ignore = F401
 """)
 
@@ -294,9 +294,9 @@ ignore = F401
 
 def test_cli_isolated_overrides_config_option(tmp_path):
     """Test --isolated overrides --config."""
-    config = tmp_path / "flake9.ini"
+    config = tmp_path / "flake8.ini"
     config.write_text(u"""\
-[flake9]
+[flake8]
 ignore = F401
 """)
 

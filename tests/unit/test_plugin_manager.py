@@ -1,8 +1,8 @@
-"""Tests for flake9.plugins.manager.PluginManager."""
+"""Tests for flake8.plugins.manager.PluginManager."""
 import mock
 
-from flake9._compat import importlib_metadata
-from flake9.plugins import manager
+from flake8._compat import importlib_metadata
+from flake8.plugins import manager
 
 
 @mock.patch.object(importlib_metadata, 'entry_points')
