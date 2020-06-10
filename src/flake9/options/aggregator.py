@@ -9,6 +9,7 @@ from typing import List, Tuple
 
 from flake9.options import config
 from flake9.options.manager import OptionManager
+from flake9.options.pyproject import parse_py_project_toml
 
 LOG = logging.getLogger(__name__)
 
@@ -43,6 +44,9 @@ def aggregate_options(
 
     # Get the parsed config
     parsed_config = config_parser.parse()
+
+    # load from pyproject.toml
+    parsed_config.update(parse_py_project_toml())
 
     # Extend the default ignore value with the extended default ignore list,
     # registered by plugins.
