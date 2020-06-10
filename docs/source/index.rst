@@ -19,14 +19,14 @@ To install |Flake8|, open an interactive shell and run:
 
 .. code::
 
-    python<version> -m pip install flake8
+    python<version> -m pip install flake9
 
 If you want |Flake8| to be installed for your default Python installation, you
 can instead use:
 
 .. code::
 
-    python -m pip install flake8
+    python -m pip install flake9
 
 .. note::
 
@@ -35,6 +35,12 @@ can instead use:
     features in Python 3.5 (for example), you need it to be installed on 3.5
     for |Flake8| to understand those features. In many ways, Flake8 is tied to
     the version of Python on which it runs.
+
+.. note::
+
+    While the package and repository are called "Flake9", the program and
+    library name are "Flake8". So you install it with ``pip install flake9``
+    but invoke it with the ``flake8`` command.
 
 Using Flake8
 ------------
