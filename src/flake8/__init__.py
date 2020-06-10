@@ -18,10 +18,8 @@ if False:  # `typing.TYPE_CHECKING` was introduced in 3.5.2
 LOG = logging.getLogger(__name__)
 LOG.addHandler(logging.NullHandler())
 
-__version__ = "3.8.4"
-__version_info__ = tuple(
-    int(i) for i in __version__.split(".") if i.isdigit()
-)
+__version__ = "3.8.3.post0"
+__version_info__ = tuple(int(i) for i in __version__.split(".") if i.isdigit())
 
 
 # There is nothing lower than logging.DEBUG (10) in the logging library,
@@ -39,8 +37,7 @@ _VERBOSITY_TO_LOG_LEVEL = {
 }
 
 LOG_FORMAT = (
-    "%(name)-25s %(processName)-11s %(relativeCreated)6d "
-    "%(levelname)-8s %(message)s"
+    "%(name)-25s %(processName)-11s %(relativeCreated)6d " "%(levelname)-8s %(message)s"
 )
 
 
@@ -73,6 +70,4 @@ def configure_logging(verbosity, filename=None, logformat=LOG_FORMAT):
     handler.setFormatter(logging.Formatter(logformat))
     LOG.addHandler(handler)
     LOG.setLevel(log_level)
-    LOG.debug(
-        "Added a %s logging handler to logger root at %s", filename, __name__
-    )
+    LOG.debug("Added a %s logging handler to logger root at %s", filename, __name__)
