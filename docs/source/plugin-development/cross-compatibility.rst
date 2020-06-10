@@ -102,15 +102,15 @@ as a single path.
 Option Handling on Flake9 2 and 3
 =================================
 
-To ease the transition, the |Flake9| maintainers have released
-`flake9-polyfill`_. |polyfill| provides a convenience function to help users
+To ease the transition, the |Flake8| maintainers have released
+`flake8-polyfill`_. |polyfill| provides a convenience function to help users
 transition between Flake9 2 and 3 without issue. For example, if your plugin
 has to work on Flake9 2.x and 3.x but you want to take advantage of some of
 the new options to ``add_option``, you can do
 
 .. code-block:: python
 
-    from flake9_polyfill import options
+    from flake8_polyfill import options
 
 
     class MyPlugin(object):
@@ -149,7 +149,7 @@ parser. The project has direct replications of the functions that |Flake9|
 uses to provide the same functionality. This means that the values you receive
 should be identically parsed whether you're using Flake9 2.x or 3.x.
 
-.. autofunction:: flake9_polyfill.options.register
+.. autofunction:: flake8_polyfill.options.register
 
 
 Standard In Handling on Flake9 2.5, 2.6, and 3
@@ -161,13 +161,13 @@ some plugins. |Flake9| 2.5 and earlier had started monkey-patching pep8's
 monkey-patched that. 3.0 has its own internal implementation and uses that but
 does not directly provide anything for plugins using pep8 and pycodestyle's
 ``stdin_get_value`` function. |polyfill| provides this functionality for
-plugin developers via its :mod:`flake9_polyfill.stdin` module.
+plugin developers via its :mod:`flake8_polyfill.stdin` module.
 
 If a plugin needs to read the content from stdin, it can do the following:
 
 .. code-block:: python
 
-    from flake9_polyfill import stdin
+    from flake8_polyfill import stdin
 
     stdin.monkey_patch('pep8')  # To monkey-patch only pep8
     stdin.monkey_patch('pycodestyle')  # To monkey-patch only pycodestyle
@@ -178,10 +178,10 @@ Further, when using ``all``, |polyfill| does not require both packages to be
 installed but will attempt to monkey-patch both and will silently ignore the
 fact that pep8 or pycodestyle is not installed.
 
-.. autofunction:: flake9_polyfill.stdin.monkey_patch
+.. autofunction:: flake8_polyfill.stdin.monkey_patch
 
 
 .. links
-.. _flake9-polyfill: https://pypi.org/project/flake9-polyfill/
+.. _flake8-polyfill: https://pypi.org/project/flake8-polyfill/
 
-.. |polyfill| replace:: ``flake9-polyfill``
+.. |polyfill| replace:: ``flake8-polyfill``
