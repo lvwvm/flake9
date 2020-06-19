@@ -7,6 +7,14 @@ Flake9 is a fork of Flake8 that supports reading configuration from a
 
 In addition, because it's 2020, Python 2.7 support has been dropped.
 
+Here's an example of the ``pyproject.toml`` file::
+
+    [tool.flake8]
+    ignore = "E203,E266,H106,H904"
+    max-line-length = 88
+    max-complexity = 25
+    hang-closing = true
+
 ========================
  Original Flake8 README
 ========================
